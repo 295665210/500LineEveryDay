@@ -1,114 +1,100 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using Autodesk.Revit.DB;
 
-namespace CodeInTangsengjiewa3.BinLibrary.Extensions
+namespace CodeInTangsengjiewa4.BinLibrary.Extensions
 {
     public static class GeometryObjectExtension
     {
-        public static IList<Face> GetFacesOfGeometryObject(this GeometryObject geoobj)
+        public static IList<Face> GetFacesOfGeometryObject(this GeometryObject geoObj)
         {
             IList<Face> result = new List<Face>();
-            List<Face> temresult = new List<Face>();
-
-            if (geoobj is GeometryElement)
+            List<Face> temResult = new List<Face>();
+            if (geoObj is GeometryElement)
             {
-                GeometryElement geoele = geoobj as GeometryElement;
-
-                foreach (GeometryObject geoitem in geoele)
+                GeometryElement geoele = geoObj as GeometryElement;
+                foreach (GeometryObject geometryObject in geoele)
                 {
-                    temresult.AddRange(GetFacesOfGeometryObject(geoitem));
+                    temResult.AddRange(GetFacesOfGeometryObject(geometryObject));
                 }
             }
-            else if (geoobj is GeometryInstance)
+            else if (geoObj is GeometryInstance)
             {
-                GeometryElement geoele = (geoobj as GeometryInstance).SymbolGeometry;
-
+                GeometryElement geoele = (geoObj as GeometryInstance).SymbolGeometry;
                 foreach (GeometryObject obj in geoele)
                 {
-                    temresult.AddRange(GetFacesOfGeometryObject(obj));
+                    temResult.AddRange(GetFacesOfGeometryObject(obj));
                 }
             }
-            else if (geoobj is Solid)
+            else if (geoObj is Solid)
             {
-                Solid solid = geoobj as Solid;
-
+                Solid solid = geoObj as Solid;
                 foreach (Face face in solid.Faces)
                 {
-                    temresult.Add(face);
+                    temResult.Add(face);
                 }
             }
-
-            result = temresult;
+            result = temResult;
             return result;
         }
 
-        public static IList<Solid> GetSolidOfGeometryObject(this GeometryObject geoobj)
+        public static IList<Solid> GetSolidOfGeometryObject(this GeometryObject geoObj)
         {
             IList<Solid> result = new List<Solid>();
-            List<Solid> temresult = new List<Solid>();
-
-            if (geoobj is GeometryElement)
+            List<Solid> temResult = new List<Solid>();
+            if (geoObj is GeometryElement)
             {
-                GeometryElement geoele = geoobj as GeometryElement;
-
-                foreach (GeometryObject geoitem in geoele)
+                GeometryElement geoele = geoObj as GeometryElement;
+                foreach (GeometryObject geometryObject in geoele)
                 {
-                    temresult.AddRange(GetSolidOfGeometryObject(geoitem));
+                    temResult.AddRange(GetSolidOfGeometryObject(geometryObject));
                 }
             }
-
-            else if (geoobj is GeometryInstance)
+            else if (geoObj is GeometryInstance)
             {
-                GeometryElement geoele = (geoobj as GeometryInstance).SymbolGeometry;
-
+                GeometryElement geoele = (geoObj as GeometryInstance).SymbolGeometry;
                 foreach (GeometryObject obj in geoele)
                 {
                     if (obj is Solid)
                     {
-                        temresult.AddRange(GetSolidOfGeometryObject(obj));
+                        temResult.AddRange(GetSolidOfGeometryObject(obj));
                     }
                 }
             }
-
-            else if (geoobj is Solid)
+            else if (geoObj is Solid)
             {
-                Solid solid = geoobj as Solid;
-                temresult.Add(solid);
+                Solid solid = geoObj as Solid;
+                temResult.Add(solid);
             }
-
-            result = temresult;
+            result = temResult;
             return result;
         }
 
         public static IList<Edge> GetEdgesOfGeometryObject(this GeometryObject geoobj)
         {
             IList<Edge> result = new List<Edge>();
-            List<Edge> temresult = new List<Edge>();
-
+            List<Edge> temResult = new List<Edge>();
             if (geoobj is GeometryElement)
             {
                 GeometryElement geoele = geoobj as GeometryElement;
-
-                foreach (GeometryObject geoitem in geoele)
+                foreach (GeometryObject geoItem in geoele)
                 {
-                    temresult.AddRange(GetEdgesOfGeometryObject(geoitem));
+                    temResult.AddRange(GetEdgesOfGeometryObject(geoItem));
                 }
             }
 
             else if (geoobj is GeometryInstance)
             {
                 GeometryElement geoele = (geoobj as GeometryInstance).SymbolGeometry;
-
                 foreach (GeometryObject obj in geoele)
                 {
                     if (obj is Solid)
                     {
-                        temresult.AddRange(GetEdgesOfGeometryObject(obj));
+                        temResult.AddRange(GetEdgesOfGeometryObject(obj));
                     }
                 }
             }
@@ -116,41 +102,34 @@ namespace CodeInTangsengjiewa3.BinLibrary.Extensions
             else if (geoobj is Solid)
             {
                 Solid solid = geoobj as Solid;
-
                 foreach (Face face in solid.Faces)
                 {
-                    temresult.AddRange(GetEdgesOfGeometryObject(face));
+                    temResult.AddRange(GetEdgesOfGeometryObject(face));
                 }
             }
 
             else if (geoobj is Face)
             {
                 Face face = geoobj as Face;
-
                 foreach (EdgeArray edgeArray in face.EdgeLoops)
                 {
                     var enu = edgeArray.GetEnumerator();
-
                     while (enu.MoveNext())
                     {
                         var edge = enu.Current as Edge;
-
                         if (edge != null)
                         {
-                            temresult.Add(edge);
+                            temResult.Add(edge);
                         }
                     }
                 }
             }
-
             else if (geoobj is Edge)
             {
-                temresult.Add(geoobj as Edge);
+                temResult.Add(geoobj as Edge);
             }
-
-            result = temresult;
+            result = temResult;
             return result;
         }
-
     }
 }

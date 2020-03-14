@@ -1,7 +1,8 @@
 ﻿using Autodesk.Revit.DB;
 using System.Collections.Generic;
 
-namespace CodeInTangsengjiewa3.BinLibrary.Extensions
+
+namespace CodeInTangsengjiewa4.BinLibrary.Extensions
 {
     public static class GeometryElementExtension
     {
@@ -9,17 +10,14 @@ namespace CodeInTangsengjiewa3.BinLibrary.Extensions
         {
             List<GeometryObject> result = new List<GeometryObject>();
             var enu = geoele.GetEnumerator();
-
             while (enu.MoveNext())
             {
                 var geoobj = enu.Current as GeometryObject;
-
                 if (geoobj != null)
                 {
                     result.Add(geoobj);
                 }
             }
-
             return result;
         }
 
@@ -27,12 +25,10 @@ namespace CodeInTangsengjiewa3.BinLibrary.Extensions
         {
             List<Face> result = new List<Face>();
             var geoobjs = geoele.GetGeometries();
-
             foreach (GeometryObject geometryObject in geoobjs)
             {
                 result.AddRange(geometryObject.GetFacesOfGeometryObject());
             }
-
             return result;
         }
 
@@ -40,12 +36,10 @@ namespace CodeInTangsengjiewa3.BinLibrary.Extensions
         {
             List<Edge> result = new List<Edge>();
             var geoobjs = geoele.GetGeometries();
-
             foreach (GeometryObject geoobj in geoobjs)
             {
                 result.AddRange(geoobj.GetEdgesOfGeometryObject());
             }
-
             return result;
         }
 
@@ -58,34 +52,32 @@ namespace CodeInTangsengjiewa3.BinLibrary.Extensions
             foreach (var edge in geoedges)
             {
                 var curve = edge.AsCurve();
-                var startpoint = curve.GetEndPoint(0);
-                var endpoint = curve.GetEndPoint(1);
-                //判断点是否位置上重合,如果不重合,则添加进列表
-                var startflag = false;
-                var endflag = false;
+                var startPoint = curve.GetEndPoint(0);
+                var endPoint = curve.GetEndPoint(1);
+                //判断点事否位置上重合,如果不重合,则添加进列表
+                var startFlag = false;
+                var endFlag = false;
                 points.ForEach(m =>
                 {
-                    if (m.DistanceTo(startpoint) < 1e-6)
+                    if (m.DistanceTo(startPoint) < 1e-6)
                     {
-                        startflag = true;
+                        startFlag = true;
                     }
-
-                    if (m.DistanceTo(endpoint) < 1e-6)
+                    if (m.DistanceTo(endPoint) < 1e-6)
                     {
-                        endflag = true;
+                        endFlag = true;
                     }
                 });
-                if (!startflag)
-                {
-                    points.Add(startpoint);
-                }
 
-                if (!endflag)
+                if (!startFlag)
                 {
-                    points.Add(endpoint);
+                    points.Add(startPoint);
+                }
+                if (!endFlag)
+                {
+                    points.Add(endPoint);
                 }
             }
-
             result = points;
             return result;
         }
