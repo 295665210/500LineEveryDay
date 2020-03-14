@@ -76,6 +76,7 @@
     <Compile Include="BinLibrary\Extensions\ElementIdExtension.cs" />
     <Compile Include="BinLibrary\Extensions\GeometryElementExtension.cs" />
     <Compile Include="BinLibrary\Extensions\GeometryObjectExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\LineExtension.cs" />
     <Compile Include="BinLibrary\Extensions\XYZExtension.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
