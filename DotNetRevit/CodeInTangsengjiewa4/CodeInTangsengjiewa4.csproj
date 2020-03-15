@@ -77,14 +77,26 @@
     <Compile Include="BinLibrary\Extensions\GeometryElementExtension.cs" />
     <Compile Include="BinLibrary\Extensions\GeometryObjectExtension.cs" />
     <Compile Include="BinLibrary\Extensions\LineExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\MepCurveExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\PipeExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\PointExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\ReferenceExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\SelectionFilter.cs" />
+    <Compile Include="BinLibrary\Extensions\TransactionExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\UIDocumentExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\VectorExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\WindowExtension.cs" />
     <Compile Include="BinLibrary\Extensions\XYZExtension.cs" />
+    <Compile Include="BinLibrary\GeometryAlgorithm\PolygonHelper.cs" />
+    <Compile Include="BinLibrary\Helpers\CollectorHelper.cs" />
+    <Compile Include="BinLibrary\Helpers\CurveHelper.cs" />
+    <Compile Include="BinLibrary\Helpers\LogHelper.cs" />
+    <Compile Include="BinLibrary\Helpers\TransactionHelper.cs" />
+    <Compile Include="BinLibrary\RevitHelper\RevitWindowHelper.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BinLibrary\Geometryalgorithm\" />
-    <Folder Include="BinLibrary\Helpers\" />
-    <Folder Include="BinLibrary\RevitHelper\" />
     <Folder Include="BinLibrary\Utils\" />
     <Folder Include="CodeInHuanGS\" />
     <Folder Include="CodeInJeme\" />

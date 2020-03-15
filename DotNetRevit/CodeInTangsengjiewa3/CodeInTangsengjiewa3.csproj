@@ -80,7 +80,7 @@
     <Compile Include="BinLibrary\Extensions\TransactionExtension.cs" />
     <Compile Include="BinLibrary\Extensions\UIDocumentExtension.cs" />
     <Compile Include="BinLibrary\Extensions\VectorExtension.cs" />
-    <Compile Include="BinLibrary\Extensions\WindwoExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\WindowExtension.cs" />
     <Compile Include="BinLibrary\Extensions\XYZExtension.cs" />
     <Compile Include="BinLibrary\Geometryalgorithm\PolygonHelper.cs" />
     <Compile Include="BinLibrary\Helpers\CollectorHelper.cs" />

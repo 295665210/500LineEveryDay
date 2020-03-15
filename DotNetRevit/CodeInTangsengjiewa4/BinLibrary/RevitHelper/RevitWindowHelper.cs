@@ -2,12 +2,12 @@
 using System;
 using System.Windows.Forms;
 
-namespace CodeInTangsengjiewa3.BinLibrary.RevitHelper
+namespace CodeInTangsengjiewa4.BinLibrary.RevitHelper
 {
     public static class RevitWindowHelper
     {
         /// <summary>
-        /// 这是做什么用的
+        /// 还是不懂干什么用的
         /// </summary>
         /// <returns></returns>
         public static IntPtr GetRevitHandle()

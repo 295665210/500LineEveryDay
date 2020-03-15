@@ -16,7 +16,7 @@ namespace CodeInTangsengjiewa3.BinLibrary.Helpers
         /// <param name="curve"></param>
         /// <param name="po"></param>
         /// <returns></returns>
-        public static List<XYZ> GetPrependicularPointList(Curve curve, XYZ po)
+        public static List<XYZ> GetPerpendicularPointList(Curve curve, XYZ po)
         {
             var result = default(List<XYZ>);
             //

@@ -4,7 +4,7 @@ namespace CodeInTangsengjiewa4.BinLibrary.Extensions
 {
     public static class LineExtension
     {
-        public static XYZ StarPoint(this Line line)
+        public static XYZ StartPoint(this Line line)
         {
             if (line.IsBound)
             {

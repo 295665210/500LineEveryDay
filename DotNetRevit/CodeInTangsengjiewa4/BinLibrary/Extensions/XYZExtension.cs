@@ -11,7 +11,7 @@ namespace CodeInTangsengjiewa4.BinLibrary.Extensions
     {
         public static XYZ XyComponent(this XYZ po)
         {
-            return new XYZ(po.X, po.Y, po.Z);
+            return new XYZ(po.X, po.Y, 0);
         }
 
         public static XYZ GetRandomNorm(this XYZ vec)
