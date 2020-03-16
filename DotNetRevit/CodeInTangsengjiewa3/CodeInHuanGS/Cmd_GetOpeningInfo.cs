@@ -15,7 +15,7 @@ namespace CodeInTangsengjiewa3.CodeInHuanGS
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    class Cmd_GetInfo_Opening : IExternalCommand
+    class Cmd_GetOpeningInfo : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

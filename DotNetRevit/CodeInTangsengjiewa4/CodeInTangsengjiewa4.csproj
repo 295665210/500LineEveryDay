@@ -93,12 +93,18 @@
     <Compile Include="BinLibrary\Helpers\LogHelper.cs" />
     <Compile Include="BinLibrary\Helpers\TransactionHelper.cs" />
     <Compile Include="BinLibrary\RevitHelper\RevitWindowHelper.cs" />
+    <Compile Include="BinLibrary\Utils\Utils.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_CreateBeam.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_CreateDoor.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_CreateTables.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_GetFaces.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_GetInfo_Opening.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_GetSubAndSuperComponents.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_MeasureDistance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BinLibrary\Utils\" />
-    <Folder Include="CodeInHuanGS\" />
     <Folder Include="CodeInJeme\" />
     <Folder Include="CodeOfQian\" />
     <Folder Include="Dim\" />

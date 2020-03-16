@@ -93,7 +93,7 @@
     <Compile Include="CodeInHuanGS\Cmd_CreateDoor.cs" />
     <Compile Include="CodeInHuanGS\Cmd_CreateTables.cs" />
     <Compile Include="CodeInHuanGS\Cmd_GetFaces.cs" />
-    <Compile Include="CodeInHuanGS\Cmd_GetInfo_Opening.cs" />
+    <Compile Include="CodeInHuanGS\Cmd_GetOpeningInfo.cs" />
     <Compile Include="CodeInHuanGS\Cmd_GetSubAndSuperComponents.cs" />
     <Compile Include="CodeInHuanGS\Cmd_ModelLineColorOverRide.cs" />
     <Compile Include="CodeInHuanGS\Cmd_ModelLineColor.cs" />
