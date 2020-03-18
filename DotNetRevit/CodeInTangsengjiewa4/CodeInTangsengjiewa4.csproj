@@ -116,6 +116,7 @@
     <Compile Include="CodeOfQian\Cmd_CreateNewWallType.cs" />
     <Compile Include="CodeOfQian\Cmd_CreateWall.cs" />
     <Compile Include="CodeOfQian\Cmd_DimTwoPoint.cs" />
+    <Compile Include="CodeOfQian\Cmd_DimWall.cs" />
     <Compile Include="CodeOfQian\Cmd_EnumViewFamily.cs" />
     <Compile Include="CodeOfQian\Cmd_IndependentTag.cs" />
     <Compile Include="CodeOfQian\Cmd_NewType.cs" />
