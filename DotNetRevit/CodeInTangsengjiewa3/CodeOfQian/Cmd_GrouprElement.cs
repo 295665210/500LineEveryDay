@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using CodeInTangsengjiewa3.BinLibrary.Extensions;
 using CodeInTangsengjiewa3.BinLibrary.Helpers;
 
 namespace CodeInTangsengjiewa3.CodeOfQian
 {
     /// <summary>
-    /// create level
+    /// group element
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_CreateLevel : IExternalCommand
+    public class Cmd_GrouprElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -27,15 +26,16 @@ namespace CodeInTangsengjiewa3.CodeOfQian
             var doc = uidoc.Document;
             var sel = uidoc.Selection;
 
-            //根据标高值查找标高的名称
             doc.Invoke(m =>
             {
-                Level level = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Levels)
-                    .OfClass(typeof(Level)).Cast<Level>()
-                    .FirstOrDefault(x => Math.Abs(x.Elevation - 8000d.MmToFeet()) < 1e-6);
-                level.get_Parameter(BuiltInParameter.LEVEL_ELEV).Set(10000d.MmToFeet());
-                level.get_Parameter(BuiltInParameter.DATUM_TEXT).Set("修改标高名称");
-            }, "change level elevation value ");
+                Group group = default(Group);
+                var selection = sel.GetElementIds();
+                if (selection.Count > 0)
+                {
+                    group = doc.Create.NewGroup(selection);
+                    group.GroupType.Name = "MyGroup";
+                }
+            }, "create group");
             return Result.Succeeded;
         }
     }

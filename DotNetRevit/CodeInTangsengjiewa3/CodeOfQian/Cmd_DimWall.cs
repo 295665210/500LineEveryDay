@@ -19,7 +19,7 @@ namespace CodeInTangsengjiewa3.CodeOfQian
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_DimWall : IExternalCommand
+    public class Cmd_DimWall : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

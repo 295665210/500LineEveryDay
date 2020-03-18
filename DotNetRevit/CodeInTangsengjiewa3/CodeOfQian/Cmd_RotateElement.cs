@@ -13,12 +13,12 @@ using CodeInTangsengjiewa3.BinLibrary.Helpers;
 namespace CodeInTangsengjiewa3.CodeOfQian
 {
     /// <summary>
-    /// mirror wall
+    /// 旋转一个柱子
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    class Cmd_Now_MirrorElement : IExternalCommand
+    public class Cmd_RotateElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -30,21 +30,13 @@ namespace CodeInTangsengjiewa3.CodeOfQian
 
             doc.Invoke(m =>
             {
-                Wall wall =
-                    sel.PickObject(ObjectType.Element, doc.GetSelectionFilter(x => x is Wall)).GetElement(doc) as Wall;
-                MirrorWall(doc, wall);
-            }, "mirror element");
+                //假设是一个柱子
+                Element ele = sel.PickObject(ObjectType.Element, "请选择一根柱子").GetElement(doc);
+                XYZ p1 = (ele.Location as LocationPoint).Point;
+                Line line = Line.CreateBound(p1, new XYZ(p1.X, p1.Y, p1.Z + 10));
+                ElementTransformUtils.RotateElement(doc, ele.Id, line, 30d.DegreeToRadius());
+            }, "旋转柱子");
             return Result.Succeeded;
-        }
-
-        public void MirrorWall(Document doc, Wall wall)
-        {
-            Reference reference = HostObjectUtils.GetSideFaces(wall, ShellLayerType.Exterior).First();
-            Face face = wall.GetGeometryObjectFromReference(reference) as Face;
-            UV boxMin = face.GetBoundingBox().Min;
-            Plane plane = Plane.CreateByNormalAndOrigin(face.ComputeNormal(boxMin),
-                                                        face.Evaluate(boxMin).Add(new XYZ(10, 10, 0)));
-            ElementTransformUtils.MirrorElement(doc, wall.Id, plane);
         }
     }
 }

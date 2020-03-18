@@ -13,16 +13,18 @@ using CodeInTangsengjiewa3.BinLibrary.Helpers;
 namespace CodeInTangsengjiewa3.CodeOfQian
 {
     /// <summary>
-    /// move element by curve
+    /// mirror wall
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_MoveElementByCurve : IExternalCommand
+    class Cmd_MirrorElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            var uidoc = commandData.Application.ActiveUIDocument;
+            var uiapp = commandData.Application;
+            var app = uiapp.Application;
+            var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
             var sel = uidoc.Selection;
 
@@ -30,10 +32,19 @@ namespace CodeInTangsengjiewa3.CodeOfQian
             {
                 Wall wall =
                     sel.PickObject(ObjectType.Element, doc.GetSelectionFilter(x => x is Wall)).GetElement(doc) as Wall;
-                Line wallLine = Line.CreateBound(XYZ.Zero, new XYZ(2000d.MmToFeet(), -10000d.MmToFeet(), 0));
-                (wall.Location as LocationCurve).Curve = wallLine;
-            }, "move wall by curve");
+                MirrorWall(doc, wall);
+            }, "mirror element");
             return Result.Succeeded;
+        }
+
+        public void MirrorWall(Document doc, Wall wall)
+        {
+            Reference reference = HostObjectUtils.GetSideFaces(wall, ShellLayerType.Exterior).First();
+            Face face = wall.GetGeometryObjectFromReference(reference) as Face;
+            UV boxMin = face.GetBoundingBox().Min;
+            Plane plane = Plane.CreateByNormalAndOrigin(face.ComputeNormal(boxMin),
+                                                        face.Evaluate(boxMin).Add(new XYZ(10, 10, 0)));
+            ElementTransformUtils.MirrorElement(doc, wall.Id, plane);
         }
     }
 }

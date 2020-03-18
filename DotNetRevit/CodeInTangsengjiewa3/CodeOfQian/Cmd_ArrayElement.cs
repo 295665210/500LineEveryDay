@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -13,29 +14,32 @@ using CodeInTangsengjiewa3.BinLibrary.Helpers;
 namespace CodeInTangsengjiewa3.CodeOfQian
 {
     /// <summary>
-    /// 旋转一个柱子
+    /// array element
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_RotateElement : IExternalCommand
+    class Cmd_ArrayElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            var uiapp = commandData.Application;
-            var app = uiapp.Application;
+            UIApplication uiapp = commandData.Application;
+            Application app = uiapp.Application;
             var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
             var sel = uidoc.Selection;
 
             doc.Invoke(m =>
             {
-                //假设是一个柱子
-                Element ele = sel.PickObject(ObjectType.Element, "请选择一根柱子").GetElement(doc);
-                XYZ p1 = (ele.Location as LocationPoint).Point;
-                Line line = Line.CreateBound(p1, new XYZ(p1.X, p1.Y, p1.Z + 10));
-                ElementTransformUtils.RotateElement(doc, ele.Id, line, 30d.DegreeToRadius());
-            }, "旋转柱子");
+                View view = doc.ActiveView;
+                ElementId eleId = sel.PickObject(ObjectType.Element).ElementId;
+                //表明阵列的方向
+                XYZ translation = new XYZ(1000d.MmToFeet(), 2000d.MmToFeet(), 0);
+                LinearArray.Create(doc, view, eleId, 3, translation, ArrayAnchorMember.Second);
+                //count :陈列后的总数量
+                //ArrayAnchorMember.Last: 相邻元素的间距为 将translation按count均分
+                //ArrayAnchorMember.Second: 相邻元素的间距为 translation
+            }, "阵列元素");
             return Result.Succeeded;
         }
     }

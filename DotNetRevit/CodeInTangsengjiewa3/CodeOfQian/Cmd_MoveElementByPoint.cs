@@ -13,7 +13,7 @@ namespace CodeInTangsengjiewa3.CodeOfQian
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_MoveElementByPoint : IExternalCommand
+    public class Cmd_MoveElementByPoint : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

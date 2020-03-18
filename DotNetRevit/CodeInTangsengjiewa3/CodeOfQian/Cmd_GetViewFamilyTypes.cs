@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -11,12 +12,12 @@ using CodeInTangsengjiewa3.BinLibrary.Helpers;
 namespace CodeInTangsengjiewa3.CodeOfQian
 {
     /// <summary>
-    /// group element
+    /// get viewFamilyTypes
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_GrouprElement : IExternalCommand
+    public class Cmd_GetViewFamilyTypes : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -28,14 +29,15 @@ namespace CodeInTangsengjiewa3.CodeOfQian
 
             doc.Invoke(m =>
             {
-                Group group = default(Group);
-                var selection = sel.GetElementIds();
-                if (selection.Count > 0)
+                var collector = new FilteredElementCollector(doc).WhereElementIsElementType().OfType<ViewFamilyType>()
+                    .OrderBy(j => j.FamilyName).ToList();
+                string info = "";
+                foreach (var ele in collector)
                 {
-                    group = doc.Create.NewGroup(selection);
-                    group.GroupType.Name = "MyGroup";
+                    info += ele.FamilyName + " : " + ele.Name + "\n";
                 }
-            }, "create group");
+                MessageBox.Show(info);
+            }, "Show viewFamilyTypes");
             return Result.Succeeded;
         }
     }

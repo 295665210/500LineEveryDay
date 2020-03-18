@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using CodeInTangsengjiewa3.BinLibrary.Helpers;
+using CodeInTangsengjiewa4.BinLibrary.Helpers;
 
-namespace CodeInTangsengjiewa3.CodeOfQian
+namespace CodeInTangsengjiewa4.CodeOfQian
 {
     /// <summary>
     /// create wall
@@ -16,15 +13,13 @@ namespace CodeInTangsengjiewa3.CodeOfQian
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    class Cmd_Now_CreateWall : IExternalCommand
+    class Cmd_CreateWall : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             var uiapp = commandData.Application;
-            var app = uiapp.Application;
             var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
-            var view = uidoc.ActiveView;
 
             IList<Curve> curves = new List<Curve>();
             curves.Add(Line.CreateBound(new XYZ(0, 0, 0), new XYZ(0, 0, 20)));
