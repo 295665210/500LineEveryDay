@@ -112,11 +112,11 @@
     <Compile Include="CodeOfQian\Cmd_Create3DView.cs" />
     <Compile Include="CodeOfQian\Cmd_CreateLevel.cs" />
     <Compile Include="CodeOfQian\Cmd_CreateWall.cs" />
-    <Compile Include="CodeOfQian\Cmd_Now_CreateWindow.cs" />
+    <Compile Include="CodeOfQian\Cmd_CreateWindow.cs" />
     <Compile Include="CodeOfQian\Cmd_DimTwoPoint.cs" />
     <Compile Include="CodeOfQian\Cmd_DimWall.cs" />
     <Compile Include="CodeOfQian\Cmd_GetViewFamilyTypes.cs" />
-    <Compile Include="CodeOfQian\Cmd_GrouprElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_GroupElement.cs" />
     <Compile Include="CodeOfQian\Cmd_MirrorElement.cs" />
     <Compile Include="CodeOfQian\Cmd_MoveElement.cs" />
     <Compile Include="CodeOfQian\Cmd_MoveElementByCurve.cs" />

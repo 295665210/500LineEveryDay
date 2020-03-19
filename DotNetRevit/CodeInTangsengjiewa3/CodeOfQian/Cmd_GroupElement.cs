@@ -16,7 +16,7 @@ namespace CodeInTangsengjiewa3.CodeOfQian
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_GrouprElement : IExternalCommand
+    public class Cmd_GroupElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

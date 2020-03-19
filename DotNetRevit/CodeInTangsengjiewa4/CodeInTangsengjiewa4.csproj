@@ -115,38 +115,48 @@
     <Compile Include="CodeOfQian\Cmd_ChangeLevelElevation.cs" />
     <Compile Include="CodeOfQian\Cmd_CreateNewWallType.cs" />
     <Compile Include="CodeOfQian\Cmd_CreateWall.cs" />
+    <Compile Include="CodeOfQian\Cmd_CreateWindow.cs" />
     <Compile Include="CodeOfQian\Cmd_DimTwoPoint.cs" />
     <Compile Include="CodeOfQian\Cmd_DimWall.cs" />
     <Compile Include="CodeOfQian\Cmd_EnumViewFamily.cs" />
+    <Compile Include="CodeOfQian\Cmd_GetViewFamilyTypes.cs" />
+    <Compile Include="CodeOfQian\Cmd_GroupElement.cs" />
     <Compile Include="CodeOfQian\Cmd_IndependentTag.cs" />
+    <Compile Include="CodeOfQian\Cmd_MirrorElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_MoveElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_MoveElementByCurve.cs" />
+    <Compile Include="CodeOfQian\Cmd_MoveElementByPoint.cs" />
     <Compile Include="CodeOfQian\Cmd_NewType.cs" />
     <Compile Include="CodeOfQian\Cmd_ArrayElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_PinnedElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_RotateElement.cs" />
+    <Compile Include="CodeOfQian\Cmd_RotateElement2.cs" />
     <Compile Include="CodeOfQian\WpfEventDemo\Cmd_CreateWall.cs" />
     <Compile Include="CodeOfQian\WpfEventDemo\MainWindow.cs" />
     <Compile Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml.cs">
       <DependentUpon>MainWindowCreateWall.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="通用\UIs\FloorSelector.xaml.cs">
+    <Compile Include="General\UIs\FloorSelector.xaml.cs">
       <DependentUpon>FloorSelector.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Annotation\" />
+    <Folder Include="Architecture\" />
     <Folder Include="Dim\" />
     <Folder Include="Resources\" />
+    <Folder Include="Senior\" />
+    <Folder Include="Structure\" />
+    <Folder Include="Templet\" />
     <Folder Include="Test\" />
-    <Folder Include="建筑\" />
-    <Folder Include="样板\" />
-    <Folder Include="注释\" />
-    <Folder Include="结构\" />
-    <Folder Include="高级\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="通用\UIs\FloorSelector.xaml">
+    <Page Include="General\UIs\FloorSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

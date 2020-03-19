@@ -19,7 +19,7 @@ namespace CodeInTangsengjiewa3.CodeOfQian
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
     [Journaling(JournalingMode.UsingCommandData)]
-    public class Cmd_Now_CreateWindow : IExternalCommand
+    public class Cmd_CreateWindow : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 
-namespace CodeInTangsengjiewa4.通用.UIs
+namespace CodeInTangsengjiewa4.General.UIs
 {
     /// <summary>
     /// FloorSelector.xaml 的交互逻辑
