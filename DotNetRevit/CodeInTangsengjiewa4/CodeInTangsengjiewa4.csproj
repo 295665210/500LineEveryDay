@@ -136,6 +136,9 @@
     <Compile Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml.cs">
       <DependentUpon>MainWindowCreateWall.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dim\Cmd_DimLine.cs" />
+    <Compile Include="Dim\Cmd_DimPipe.cs" />
+    <Compile Include="Dim\Cmd_DimTwoPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="General\UIs\FloorSelector.xaml.cs">
       <DependentUpon>FloorSelector.xaml</DependentUpon>
@@ -144,7 +147,6 @@
   <ItemGroup>
     <Folder Include="Annotation\" />
     <Folder Include="Architecture\" />
-    <Folder Include="Dim\" />
     <Folder Include="Resources\" />
     <Folder Include="Senior\" />
     <Folder Include="Structure\" />
