@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -139,10 +140,25 @@
     <Compile Include="Dim\Cmd_DimLine.cs" />
     <Compile Include="Dim\Cmd_DimPipe.cs" />
     <Compile Include="Dim\Cmd_DimTwoPoint.cs" />
+    <Compile Include="Dim\Cmd_DimWall.cs" />
+    <Compile Include="General\Cmd_3DRegionView.cs" />
+    <Compile Include="General\Cmd_ChangeBackGroundColor.cs" />
+    <Compile Include="General\Cmd_Floor3D.cs" />
+    <Compile Include="General\Cmd_ForcedDisplay.cs" />
+    <Compile Include="General\Cmd_HideElementInFamilyDoc.cs" />
+    <Compile Include="General\Cmd_PickBox3D.cs" />
+    <Compile Include="General\Cmd_ReverseBackGroundColor.cs" />
+    <Compile Include="General\UIs\FloorTypeSelector.xaml.cs">
+      <DependentUpon>FloorTypeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\UIs\ViewSemutaneousSelector.xaml.cs">
+      <DependentUpon>ViewSemutaneousSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="General\UIs\FloorSelector.xaml.cs">
       <DependentUpon>FloorSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TeacherXuExercise\Date0320CategoryType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Annotation\" />
@@ -159,6 +175,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="General\UIs\FloorSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General\UIs\FloorTypeSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="General\UIs\ViewSemutaneousSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
@@ -11,6 +12,9 @@ namespace CodeInTangsengjiewa4.Dim
     /// <summary>
     /// dim two point
     /// </summary>
+    [Transaction(TransactionMode.Manual)]
+    [Regeneration(RegenerationOption.Manual)]
+    [Journaling(JournalingMode.UsingCommandData)]
     public class Cmd_DimTwoPoint : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
@@ -21,13 +25,14 @@ namespace CodeInTangsengjiewa4.Dim
             View view = doc.ActiveView;
             Selection sel = uidoc.Selection;
             ViewType vt = view.ViewType;
-
+            
             if (vt == ViewType.FloorPlan || vt == ViewType.Elevation)
             {
                 Reference eRef = default(Reference);
                 try
                 {
                     eRef = sel.PickObject(ObjectType.Element, "please select a curved based element like wall");
+
                 }
                 catch
                 {

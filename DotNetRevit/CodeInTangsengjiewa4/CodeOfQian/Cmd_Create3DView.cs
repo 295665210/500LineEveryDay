@@ -42,7 +42,11 @@ namespace CodeInTangsengjiewa4.CodeOfQian
                 //turn off the far clip plane with standard parameter API
                 Parameter farClip = view3d.get_Parameter(BuiltInParameter.VIEWER_BOUND_ACTIVE_FAR);
                 farClip.Set(1);
+                
             }
+            ts.Commit();
+
+
             return Result.Succeeded;
         }
     }

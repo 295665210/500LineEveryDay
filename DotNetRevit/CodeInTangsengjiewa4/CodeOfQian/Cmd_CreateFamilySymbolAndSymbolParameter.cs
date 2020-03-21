@@ -1,4 +1,5 @@
-﻿using Autodesk.Revit.DB;
+﻿using Autodesk.Revit.Attributes;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 
 namespace CodeInTangsengjiewa4.CodeOfQian
@@ -7,6 +8,9 @@ namespace CodeInTangsengjiewa4.CodeOfQian
     /// create Family Symbol and symbol parameter
     /// code from:https://www.jianshu.com/p/80833193d73b
     /// </summary>
+    [Transaction(TransactionMode.Manual)]
+    [Regeneration(RegenerationOption.Manual)]
+    [Journaling(JournalingMode.UsingCommandData)]
     public class Cmd_CreateFamilySymbolAndSymbolParameter : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
