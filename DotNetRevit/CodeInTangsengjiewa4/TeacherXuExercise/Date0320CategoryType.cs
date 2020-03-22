@@ -9,7 +9,7 @@ namespace CodeInTangsengjiewa4.TeacherXuExercise
 {
     /// <summary>
     ///2020年3月20日布置的作业：把文档中属于模型类别  CategoryType.Model 的元素 都过滤出来
-    /// 
+
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]

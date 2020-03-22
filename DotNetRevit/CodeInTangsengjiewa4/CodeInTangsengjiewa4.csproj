@@ -161,19 +161,19 @@
     <Compile Include="General\UIs\FloorSelector.xaml.cs">
       <DependentUpon>FloorSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Senior\Cmd_CallSystemCmd.cs" />
     <Compile Include="TeacherXuExercise\Date0320CategoryType.cs" />
     <Compile Include="TeacherXuExercise\Date0320CategoryType3.cs" />
     <Compile Include="TeacherXuExercise\Date0320CategoryType2.cs" />
     <Compile Include="Temp\Cmd_ViewSimultaneous.cs" />
+    <Compile Include="Test\Cmd_CalculateAreaOfShipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Annotation\" />
     <Folder Include="Architecture\" />
     <Folder Include="Resources\" />
-    <Folder Include="Senior\" />
     <Folder Include="Structure\" />
     <Folder Include="Templet\" />
-    <Folder Include="Test\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml">
