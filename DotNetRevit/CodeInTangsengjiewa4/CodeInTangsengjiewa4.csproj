@@ -148,6 +148,9 @@
     <Compile Include="General\Cmd_HideElementInFamilyDoc.cs" />
     <Compile Include="General\Cmd_PickBox3D.cs" />
     <Compile Include="General\Cmd_ReverseBackGroundColor.cs" />
+    <Compile Include="General\Cmd_UnHideElementsInFamilyDoc.cs" />
+    <Compile Include="General\Cmd_UpdateFiles.cs" />
+    <Compile Include="General\Cmd_ViewSimultaneous.cs" />
     <Compile Include="General\UIs\FloorTypeSelector.xaml.cs">
       <DependentUpon>FloorTypeSelector.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,9 @@
       <DependentUpon>FloorSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="TeacherXuExercise\Date0320CategoryType.cs" />
+    <Compile Include="TeacherXuExercise\Date0320CategoryType3.cs" />
+    <Compile Include="TeacherXuExercise\Date0320CategoryType2.cs" />
+    <Compile Include="Temp\Cmd_ViewSimultaneous.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Annotation\" />
