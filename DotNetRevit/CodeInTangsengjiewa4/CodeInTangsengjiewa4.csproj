@@ -167,6 +167,14 @@
     <Compile Include="TeacherXuExercise\Date0320CategoryType2.cs" />
     <Compile Include="Temp\Cmd_ViewSimultaneous.cs" />
     <Compile Include="Test\Cmd_CalculateAreaOfShipment.cs" />
+    <Compile Include="Test\Cmd_CalculateConcreteVolume.cs" />
+    <Compile Include="Test\Cmd_ExternalStorageDataTest.cs" />
+    <Compile Include="Test\Cmd_FlipTee.cs" />
+    <Compile Include="Test\Cmd_GetCuttedFace.cs" />
+    <Compile Include="Test\Cmd_InRegionTest.cs" />
+    <Compile Include="Test\Cmd_RotateTest.cs" />
+    <Compile Include="Test\Cmd_SurfaceTest.cs" />
+    <Compile Include="Test\Cmd_UpdateFiles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Annotation\" />
