@@ -91,6 +91,10 @@
     <Compile Include="Cmd\Cmd_PickBox3D.cs" />
     <Compile Include="Cmd\Cmd_ReverseBackGroundColor.cs" />
     <Compile Include="Cmd\Cmd_UnhideElementsInFamlyDoc.cs" />
+    <Compile Include="Cmd\Cmd_ViewSimultaneous.cs" />
+    <Compile Include="Cmd\UIs\ViewSemutaneousSelector.xaml.cs">
+      <DependentUpon>ViewSemutaneousSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cmd_HelloWorld.cs" />
     <Compile Include="Cmd_HelloRevit.cs" />
     <Compile Include="ApplicationMain.cs" />
@@ -132,6 +136,17 @@
     <Resource Include="Source\Cmd_ForcedDisplayInDoc.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Cmd_ViewSimultaneous32x32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Cmd\UIs\ViewSemutaneousSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

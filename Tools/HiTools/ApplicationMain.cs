@@ -19,6 +19,7 @@ namespace HiTools
     {
         public Result OnStartup(UIControlledApplication application)
         {
+            #region panel-1
             //1 创建RibbonTab
             application.CreateRibbonTab("HiTools");
             //2 在tab中创建uiPanel
@@ -71,6 +72,7 @@ namespace HiTools
                                     Uri("pack://application:,,,/HiTools;component/Source/Cmd_ReverseBackGroundColor.png",
                                         UriKind.Absolute));
             pushButton_Cmd_ReverseBackGroundColor.ToolTip = "Cmd_PickBox3D";
+            #endregion
 
             // //注意要点:
             // //1 当前程序集路径
@@ -78,6 +80,7 @@ namespace HiTools
             // //1.2 当前程序的路径
             // string InfoRevitLocation = Process.GetCurrentProcess().MainModule.FileName;
 
+            #region panel-2
             //2 在tab中再创建uiPanel StackPanel
             RibbonPanel rp2 = application.CreateRibbonPanel("HiTools", "StackedItem");
 
@@ -121,9 +124,33 @@ namespace HiTools
                                     Uri("pack://application:,,,/HiTools;component/Source/Cmd_ForcedDisplayInDoc.png",
                                         UriKind.Absolute));
             pushButton4.ToolTip = "Cmd_ForcedDisplayInDoc";
+            #endregion
 
+            #region panel-3
+         
+            //2 在tab中创建Panel -view
+            RibbonPanel ribbonPanel3 = application.CreateRibbonPanel("HiTools", "View");
+            //3 指定程序集的名称及所使用的类名
+            string classNameViewSimu = "HiTools.Cmd.Cmd_ViewSimultaneous";
+            //4 创建按钮 pushButton
+            PushButtonData pbd31 =
+                new PushButtonData("HiToolsInternalName", "ViewSimu", assemblyPath, classNameViewSimu);
+            PushButton pushButton31 = ribbonPanel3.AddItem(pbd31) as PushButton;
+            //4-2 给按钮加个图片: 支持png, 大小要求32x32 16x16
+            // string imgPath = @"D:\Desktop\hello32x32.png";
+            // pushButton.LargeImage =new BitmapImage(new Uri(imgPath));
+            pushButton31.LargeImage =
+                new BitmapImage(new Uri("pack://application:,,,/HiTools;component/Source/Cmd_ViewSimultaneous32x32.png",
+                                        UriKind.Absolute));
+            //4-3 给按钮设置一个默认的提示信息
+            pushButton31.ToolTip = "视图同步";
 
+           
 
+            
+
+           
+            #endregion
 
             return Result.Succeeded;
         }

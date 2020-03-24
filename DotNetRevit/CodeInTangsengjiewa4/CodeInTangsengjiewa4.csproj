@@ -68,6 +68,8 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Architecture\Cmd_BeamAlignToRoofAndFloor.cs" />
+    <Compile Include="Architecture\Cmd_CreateFloorQuickly.cs" />
     <Compile Include="BinLibrary\Extensions\BitmapExtension.cs" />
     <Compile Include="BinLibrary\Extensions\ColorExtension.cs" />
     <Compile Include="BinLibrary\Extensions\ConnectorExtension.cs" />
@@ -95,7 +97,6 @@
     <Compile Include="BinLibrary\Helpers\TransactionHelper.cs" />
     <Compile Include="BinLibrary\RevitHelper\RevitWindowHelper.cs" />
     <Compile Include="BinLibrary\Utils\Utils.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CodeInHuanGS\Cmd_CreateBeam.cs" />
     <Compile Include="CodeInHuanGS\Cmd_CreateDoor.cs" />
     <Compile Include="CodeInHuanGS\Cmd_CreateTables.cs" />
@@ -178,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Annotation\" />
-    <Folder Include="Architecture\" />
     <Folder Include="Resources\" />
     <Folder Include="Structure\" />
     <Folder Include="Templet\" />
