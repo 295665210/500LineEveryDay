@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using Application = Autodesk.Revit.ApplicationServices.Application;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Events;
-using Autodesk.Revit.DB.Visual;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using Autodesk.Revit.UI.Selection;
 using CodeInTangsengjiewa3.BinLibrary.Extensions;
 using CodeInTangsengjiewa3.BinLibrary.Helpers;
-using Application = Autodesk.Revit.ApplicationServices.Application;
+using UIFrameworkServices;
 
 namespace CodeInTangsengjiewa3.建筑
 {
-    [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
-    [Journaling(JournalingMode.UsingCommandData)]
+    [Transaction(TransactionMode.Manual)]
     class Cmd_CutFloorWithLine : IExternalCommand
     {
+        //为什么一些属性要定义在这里??
         private Floor floor = null;
         ICollection<ElementId> ids_add = new List<ElementId>();
         private Application App = null;
@@ -34,8 +33,14 @@ namespace CodeInTangsengjiewa3.建筑
             var doc = uidoc.Document;
             var sel = uidoc.Selection;
             var acview = uidoc.ActiveView;
-            //
-            // app.DocumentChanged += OnDocumentChanged;
+
+            app.DocumentChanged += OnDocumentChanged;
+            uiapp.Idling += OnIdling;
+
+            floor =
+                sel.PickObject(ObjectType.Element, doc.GetSelectionFilter(m => m is Floor)).GetElement(doc) as Floor;
+            CommandHandlerService.invokeCommandHandler("ID_OBJECTS_PROJECT_CURVE");
+            return Result.Succeeded;
         }
 
         private void OnIdling(object sender, IdlingEventArgs e)
@@ -51,46 +56,53 @@ namespace CodeInTangsengjiewa3.建筑
                 {
                     return;
                 }
-                var modelLine = ids_add.First().GetElement(ActiveDoc) as ModelLine;
-                var line = modelLine.GeometryCurve as Line;
-                var lineDir = line.Direction;
-                var startPoint = line.StartPoint();
-                var endPoint = line.EndPoint();
+                var modelline = ids_add.First().GetElement(ActiveDoc) as ModelLine;
+                var line = modelline.GeometryCurve as Line;
+                var linedir = line.Direction;
+                var startpo = line.StartPoint();
+                var endpo = line.EndPoint();
 
-                var upDir = XYZ.BasisZ;
-                var leftNorm = upDir.CrossProduct(lineDir).Normalize();
-                var rightNorm = upDir.CrossProduct(-lineDir).Normalize();
+                var updir = XYZ.BasisZ;
 
-                var leftSpacePlane = default(Plane);
-                var rightSpacePlane = default(Plane);
+                var leftNorm = updir.CrossProduct(linedir).Normalize();
+                var rightNorm = updir.CrossProduct(-linedir).Normalize();
 
-                var geoEle = floor.get_Geometry(new Options()
+                var leftspacePlane = default(Plane);
+                var rightspacePlane = default(Plane);
+
+                leftspacePlane = Plane.CreateByNormalAndOrigin(leftNorm, startpo);
+                rightspacePlane = Plane.CreateByNormalAndOrigin(rightNorm, startpo);
+
+                var geoele = floor.get_Geometry(new Options()
                 {
-                    ComputeReferences = true,
-                    DetailLevel = ViewDetailLevel.Fine
+                    ComputeReferences = true, DetailLevel = ViewDetailLevel.Fine
                 });
-                var solid = geoEle.GetSolids().FirstOrDefault();
-                var newSolid1 = BooleanOperationsUtils.CutWithHalfSpace(solid, leftSpacePlane);
-                var newSolid2 = BooleanOperationsUtils.CutWithHalfSpace(solid, rightSpacePlane);
 
-                var upface1 = newSolid1.GetFacesOfGeometryObject()
+                var solid = geoele.GetSolids().FirstOrDefault();
+
+                var newsolid1 = BooleanOperationsUtils.CutWithHalfSpace(solid, leftspacePlane);
+                var newsolid2 = BooleanOperationsUtils.CutWithHalfSpace(solid, rightspacePlane);
+
+                var upface1 = newsolid1.GetFacesOfGeometryObject()
                     .Where(m => m.ComputeNormal(new UV()).IsSameDirection(XYZ.BasisZ)).FirstOrDefault();
-                var upface2 = newSolid2.GetFacesOfGeometryObject()
+                var upface2 = newsolid2.GetFacesOfGeometryObject()
                     .Where(m => m.ComputeNormal(new UV()).IsSameDirection(XYZ.BasisZ)).FirstOrDefault();
 
-                var curveLoop1 = upface1.GetEdgesAsCurveLoops().FirstOrDefault();
-                var curveArray = curveLoop1.ToCurveArray();
-                var curveLoop2 = upface2.GetEdgesAsCurveLoops().FirstOrDefault();
-                var curveArray2 = curveLoop2.ToCurveArray();
+                var curveloop1 = upface1.GetEdgesAsCurveLoops().FirstOrDefault();
+                var curvearray1 = curveloop1.ToCurveArray();
+
+                var curveloop2 = upface2.GetEdgesAsCurveLoops().FirstOrDefault();
+                var curvearray2 = curveloop2.ToCurveArray();
 
                 ActiveDoc.Invoke(m =>
                 {
-                    var newFloor1 = ActiveDoc.Create.NewFloor(curveArray, floor.FloorType,
+                    var newfloor1 = ActiveDoc.Create.NewFloor(curvearray1, floor.FloorType,
                                                               floor.LevelId.GetElement(ActiveDoc) as Level, false);
-                    var newFloor2 = ActiveDoc.Create.NewFloor(curveArray, floor.FloorType,
+                    var newfloor2 = ActiveDoc.Create.NewFloor(curvearray2, floor.FloorType,
                                                               floor.LevelId.GetElement(ActiveDoc) as Level, false);
                     doc.Delete(floor.Id);
                 }, "new floor");
+
                 if (this != null)
                 {
                     uiapp.Idling -= OnIdling;
@@ -103,7 +115,7 @@ namespace CodeInTangsengjiewa3.建筑
             }
         }
 
-        private void OnDocumentChanged(Object sender, DocumentChangedEventArgs e)
+        private void OnDocumentChanged(object sender, DocumentChangedEventArgs e)
         {
             var app = sender as Application;
             try
@@ -115,38 +127,50 @@ namespace CodeInTangsengjiewa3.建筑
                 {
                     return;
                 }
-                var modelLine = ids_add.First().GetElement(ActiveDoc) as ModelLine;
-                var line = modelLine.GeometryCurve as Line;
-                var lineDir = line.Direction;
-                var startPoint = line.StartPoint();
-                var endPoint = line.EndPoint();
-                var upDir = XYZ.BasisZ;
-                var leftNorm = upDir.CrossProduct(lineDir).Normalize();
-                var rightNorm = upDir.CrossProduct(-lineDir).Normalize();
+                var modelline = ids_add.First().GetElement(ActiveDoc) as ModelLine;
+                var line = modelline.GeometryCurve as Line;
 
-                var leftSpacePlane = default(Plane);
-                var rightSpacePlane = default(Plane);
-                var slapshapeEditor = floor.SlabShapeEditor;
+                var linedir = line.Direction;
+                var startpo = line.StartPoint();
+                var endpo = line.EndPoint();
+
+                var updir = XYZ.BasisZ;
+
+                var leftNorm = updir.CrossProduct(linedir).Normalize();
+                var rightNorm = updir.CrossProduct(-linedir).Normalize();
+
+                var leftspacePlane = default(Plane);
+                var rightspacePlane = default(Plane);
+
+                leftspacePlane = Plane.CreateByNormalAndOrigin(leftNorm, startpo);
+                rightspacePlane = Plane.CreateByNormalAndOrigin(rightNorm, startpo);
+
+                var slapshaperEditor = floor.SlabShapeEditor;
                 //剪切楼板
-                var geoEle = floor.get_Geometry(new Options()
+                var geoele = floor.get_Geometry(new Options()
                 {
                     ComputeReferences = true, DetailLevel = ViewDetailLevel.Fine
                 });
-                var solid = geoEle.GetSolids().FirstOrDefault();
 
-                var newSolid1 = BooleanOperationsUtils.CutWithHalfSpace(solid, leftSpacePlane);
-                var newSolid2 = BooleanOperationsUtils.CutWithHalfSpace(solid, rightSpacePlane);
+                var solid = geoele.GetSolids().FirstOrDefault();
 
-                var upFace1 = newSolid1.GetFacesOfGeometryObject()
+                var newsolid1 = BooleanOperationsUtils.CutWithHalfSpace(solid, leftspacePlane);
+                var newsolid2 = BooleanOperationsUtils.CutWithHalfSpace(solid, rightspacePlane);
+
+                var upface1 = newsolid1
+                    .GetFacesOfGeometryObject()
+                    .FirstOrDefault(m => m.ComputeNormal(new UV()).IsSameDirection(XYZ.BasisZ));
+                var upface2 = newsolid2.GetFacesOfGeometryObject()
                     .FirstOrDefault(m => m.ComputeNormal(new UV()) == XYZ.BasisZ);
 
-                var curveLoop = upFace1.GetEdgesAsCurveLoops().FirstOrDefault();
-                var curveArray = curveLoop.ToCurveArray();
+                var curveloop1 = upface1.GetEdgesAsCurveLoops().FirstOrDefault();
+                var curvearray = curveloop1.ToCurveArray();
                 ActiveDoc.Invoke(m =>
                 {
-                    var newFloor = ActiveDoc.Create.NewFloor(curveArray, floor.FloorType,
-                                                             floor.LevelId.GetElement(ActiveDoc) as Level, false);
+                    var newfloor1 = ActiveDoc.Create.NewFloor(curvearray, floor.FloorType,
+                                                              floor.LevelId.GetElement(ActiveDoc) as Level, false);
                 }, "new floor");
+
                 if (this != null)
                 {
                     App.DocumentChanged -= OnDocumentChanged;
