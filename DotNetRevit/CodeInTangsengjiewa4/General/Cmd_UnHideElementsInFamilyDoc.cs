@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using CodeInTangsengjiewa4.BinLibrary.Helpers;
@@ -11,6 +12,9 @@ namespace CodeInTangsengjiewa4.General
     /// <summary>
     /// show hided elements in family document of any view 
     /// </summary>
+    [Transaction(TransactionMode.Manual)]
+    [Regeneration(RegenerationOption.Manual)]
+    [Journaling(JournalingMode.UsingCommandData)]
     class Cmd_UnHideElementsInFamilyDoc : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)

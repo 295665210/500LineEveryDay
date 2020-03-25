@@ -141,6 +141,11 @@
     <Compile Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml.cs">
       <DependentUpon>MainWindowCreateWall.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CodeOfQian\WpfRevitFilter\Cmd\Cmd_WpfRevitFilter.cs" />
+    <Compile Include="CodeOfQian\WpfRevitFilter\MainWindow.cs" />
+    <Compile Include="CodeOfQian\WpfRevitFilter\MainWindowRevitFilter.xaml.cs">
+      <DependentUpon>MainWindowRevitFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dim\Cmd_DimLine.cs" />
     <Compile Include="Dim\Cmd_DimPipe.cs" />
     <Compile Include="Dim\Cmd_DimTwoPoint.cs" />
@@ -188,6 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeOfQian\WpfRevitFilter\MainWindowRevitFilter.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

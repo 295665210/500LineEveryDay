@@ -29,7 +29,7 @@ namespace CodeInTangsengjiewa4.Test
                     temDoc.Save();
                     temDoc.Close();
                 }
-            }l
+            }
             else
             {
                 return Result.Cancelled;
