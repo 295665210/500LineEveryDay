@@ -153,7 +153,7 @@
     <Compile Include="样板\UIs\ResultShow.xaml.cs">
       <DependentUpon>ResultShow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="注释\Cmd_LengthAccumulate.cs" />
+    <Compile Include="样板\Cmd_LengthAccumulate.cs" />
     <Compile Include="样板\UIs\TypeSelector.xaml.cs">
       <DependentUpon>TypeSelector.xaml</DependentUpon>
     </Compile>

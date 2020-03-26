@@ -68,6 +68,10 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotation\Cmd_SectionGap.cs" />
+    <Compile Include="Prototype\Cmd_CopyViewCropRegion.cs" />
+    <Compile Include="Prototype\Cmd_HideRevitInstance.cs" />
+    <Compile Include="Prototype\Cmd_LengthAccumulate.cs" />
     <Compile Include="Architecture\Cmd_BeamAlignToRoofAndFloor.cs" />
     <Compile Include="Architecture\Cmd_CreateFloorQuickly.cs" />
     <Compile Include="Architecture\Cmd_CutFloorWithLine.cs" />
@@ -174,6 +178,15 @@
     <Compile Include="TeacherXuExercise\Date0320CategoryType.cs" />
     <Compile Include="TeacherXuExercise\Date0320CategoryType3.cs" />
     <Compile Include="TeacherXuExercise\Date0320CategoryType2.cs" />
+    <Compile Include="Prototype\UIs\ResultShow.xaml.cs">
+      <DependentUpon>ResultShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype\UIs\TypeSelector.xaml.cs">
+      <DependentUpon>TypeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prototype\UIs\ViewSelector.xaml.cs">
+      <DependentUpon>ViewSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Temp\Cmd_ViewSimultaneous.cs" />
     <Compile Include="Test\Cmd_CalculateAreaOfShipment.cs" />
     <Compile Include="Test\Cmd_CalculateConcreteVolume.cs" />
@@ -186,10 +199,8 @@
     <Compile Include="Test\Cmd_UpdateFiles.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Annotation\" />
     <Folder Include="Resources\" />
     <Folder Include="Structure\" />
-    <Folder Include="Templet\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml">
@@ -209,6 +220,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="General\UIs\ViewSemutaneousSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype\UIs\ResultShow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype\UIs\TypeSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prototype\UIs\ViewSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

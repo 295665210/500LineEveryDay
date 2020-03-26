@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using Autodesk.Revit.ApplicationServices;
+﻿using System.Collections.Generic;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
-    u
-using CodeInTangsengjiewa3.BinLibrary.Extensions;
-using CodeInTangsengjiewa3.BinLibrary.RevitHelper;
-using CodeInTangsengjiewa3.注释.UIs;
+using CodeInTangsengjiewa.BinLibrary.Extensions;
+using CodeInTangsengjiewa4.BinLibrary.RevitHelper;
+using CodeInTangsengjiewa4.Prototype.UIs;
+using Application = Autodesk.Revit.ApplicationServices.Application;
 
-namespace CodeInTangsengjiewa3.样板
+namespace CodeInTangsengjiewa4.Prototype
 {
     /// <summary>
-    ///  统计长度
+    /// 统计长度
     /// </summary>
     [Transaction(TransactionMode.Manual)]
     [Regeneration(RegenerationOption.Manual)]
@@ -35,17 +27,17 @@ namespace CodeInTangsengjiewa3.样板
             var uiapp = commandData.Application;
             var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
-            var acview = doc.ActiveView;
-            var sel = uidoc.Selection;
 
             _doc = doc;
 
             doc.Application.DocumentChanged += OnDocumentChanged;
 
-            ResultShow resultShowin = ResultShow.Instance;
-            resultShowin.Helper().Owner = RevitWindowHelper.GetRevitHandle();
-            ResultShow.Instance.Show();
+            ResultShow resultShowIn = ResultShow.Instance;
+            resultShowIn.Helper().Owner = RevitWindowHelper.GetRevitHandle();
+            resultShowIn.Show();
+
             uiapp.PostCommand(RevitCommandId.LookupPostableCommandId(PostableCommand.ModelLine));
+
             return Result.Succeeded;
         }
 
