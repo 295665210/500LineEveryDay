@@ -69,6 +69,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotation\Cmd_SectionGap.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\Commands.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\DBDocumentItem.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\DBViewItem.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\LoadFamilyExEvent.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\PreviewExEvent.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\PreviewModel.cs" />
+    <Compile Include="CodeInFunny\FamilyLibrary\PreviewModel.xaml.cs">
+      <DependentUpon>PreviewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeInFunny\FamilyLibrary\StartConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>StartConfig.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodeInHuanGS\Cmd_Geometry.cs" />
     <Compile Include="Prototype\Cmd_CopyViewCropRegion.cs" />
     <Compile Include="Prototype\Cmd_HideRevitInstance.cs" />
     <Compile Include="Prototype\Cmd_LengthAccumulate.cs" />
@@ -203,6 +218,10 @@
     <Folder Include="Structure\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CodeInFunny\FamilyLibrary\PreviewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CodeOfQian\WpfEventDemo\MainWindowCreateWall.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -235,6 +254,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CodeInFunny\FamilyLibrary\StartConfig.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>StartConfig.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
