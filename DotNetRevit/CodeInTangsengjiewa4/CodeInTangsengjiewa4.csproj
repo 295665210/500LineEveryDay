@@ -69,12 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotation\Cmd_SectionGap.cs" />
-    <Compile Include="CodeInFunny\FamilyLibrary\Commands.cs" />
-    <Compile Include="CodeInFunny\FamilyLibrary\DBDocumentItem.cs" />
     <Compile Include="CodeInFunny\FamilyLibrary\DBViewItem.cs" />
-    <Compile Include="CodeInFunny\FamilyLibrary\LoadFamilyExEvent.cs" />
-    <Compile Include="CodeInFunny\FamilyLibrary\PreviewExEvent.cs" />
-    <Compile Include="CodeInFunny\FamilyLibrary\PreviewModel.cs" />
     <Compile Include="CodeInFunny\FamilyLibrary\PreviewModel.xaml.cs">
       <DependentUpon>PreviewModel.xaml</DependentUpon>
     </Compile>

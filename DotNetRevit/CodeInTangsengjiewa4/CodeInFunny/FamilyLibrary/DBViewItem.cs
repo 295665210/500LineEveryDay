@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Markup;
 using Autodesk.Revit.DB;
-using View = Autodesk.Revit.DB.View;
 
 namespace CodeInTangsengjiewa4.CodeInFunny.FamilyLibrary
 {
@@ -24,11 +21,6 @@ namespace CodeInTangsengjiewa4.CodeInFunny.FamilyLibrary
             Id = dbView.Id;
             UniqueId = dbView.UniqueId;
             View = dbView;
-        }
-
-        public override string ToString()
-        {
-            return Name;
         }
     }
 }

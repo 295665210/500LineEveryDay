@@ -5,40 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApps"
         mc:Ignorable="d"
-        Title="本地族库浏览器" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
-    
-    <Grid >
+        Title="本地族库浏览器" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Loaded="Window_Loaded">
+
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="8*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="9*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <TreeView Name="familyTree" Margin="10" TreeViewItem.Selected="FamilyTree_Selected"
-                  Loaded="FamilyTree_Loaded" TreeViewItem.Expanded="FamilyTree_Expanded">
-        </TreeView>
-        <Grid Grid.Column="1" Name="preView">
-            
-        </Grid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="selectFilePath" Content="选择路径" Margin="10,16,2,16" Click="SelectFilePath_Click" Width="60"/>
-            <!--<Button Name="changeFilePath" Content="切换路径" Margin="10,16,2,16" Click="ChangeFilePath_Click"/>-->
-            <Button Name="loadBTN" Content="载入" Margin="10,16,2,16"   Click="LoadBTN_Click" Width="40"/>
-            <Button Name="upLoadBTN" Content="上传" Margin="10,16,10,16" Click="UpLoadBTN_Click" Width="40"/>
+        <TreeView
+            Name="familyTree"
+            Margin="10"
+            TreeViewItem.Selected="FamilyTree_Selected"
+            Loaded="FamilyTree_Loaded"
+            TreeViewItem.Expanded="FamilyTree_Expanded" />
+        <Grid Grid.Column="1" Name="preView" />
+        <StackPanel
+            Grid.Row="1"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
+            <Button Name="selectFilePath"
+                    Content="选择路径"
+                    Margin="10,16,2,16"
+                    Click="SelectFilePath_Click"
+                    Width="60" />
+            <Button Name="loadBTN"
+                    Content="载入"
+                    Margin="10,16,10,16"
+                    Click="LoadBTN_Click" />
+            <Button Name="upLoadBTN"
+                    Content="上传"
+                    Margin="10,16,2,16"
+                    Click="UpLoadBTN_Click" />
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,0,110,0">
-            <Label Content="模型精度:" Margin="0,10,0,20" Padding="5"/>
-            <ComboBox x:Name="deLevel" Margin="0,15,20,20" Width="60" ItemsSource="{Binding}" 
-                      SelectionChanged="DeLevel_SelectionChanged" HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="10,0,110,0">
+            <Label Content="模型精度"
+                   Margin="010,0,20"
+                   Padding="5" />
+            <ComboBox x:Name="deLevel"
+                      Margin="0,15,20,20"
+                      Width="60"
+                      ItemsSource="{Binding}"
+                      SelectionChanged="DeLevel_SelectionChanged"
+                      HorizontalAlignment="Center" />
             <Label Content="视图样式:" Margin=" 0,10,0,20" Padding="5"/>
             <ComboBox Name="dsStyle" Margin=" 0,15,20,20" Width=" 80" ItemsSource="{Binding}" 
                       SelectionChanged="DsStyle_SelectionChanged" HorizontalAlignment="Center"/>
-            <Label Content="视图列表:" Margin="0,10,0,20"  Padding="5"/>
-            <ComboBox Name="viewCB" Margin="0,15,20,20" Width="120" ItemsSource="{Binding}" 
-                      SelectionChanged="ViewCB_SelectionChanged" HorizontalAlignment="Center"/>
+
+            <Label Content="视图列表:"
+                   Margin="0,10,0,20"
+                   Padding="5" />
+            <ComboBox Name="viewCB"
+                      Margin="0,15,20,20"
+                      Width="120"
+                      ItemsSource="{Binding}"
+                      SelectionChanged="ViewCB_SelectionChanged"
+                      HorizontalAlignment="Center" />
+
         </StackPanel>
+
 
     </Grid>
 </Window>
