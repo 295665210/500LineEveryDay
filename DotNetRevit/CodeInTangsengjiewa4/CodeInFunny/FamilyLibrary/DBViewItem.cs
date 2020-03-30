@@ -9,11 +9,6 @@ namespace CodeInTangsengjiewa4.CodeInFunny.FamilyLibrary
 {
     class DBViewItem
     {
-        public string Name { get; set; }
-        public ElementId Id { get; set; }
-        public string UniqueId { get; set; }
-        public View View { get; set; }
-
         public DBViewItem(View dbView, Document dbdoc)
         {
             ElementType viewType = dbdoc.GetElement(dbView.GetTypeId()) as ElementType;
@@ -22,5 +17,15 @@ namespace CodeInTangsengjiewa4.CodeInFunny.FamilyLibrary
             UniqueId = dbView.UniqueId;
             View = dbView;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public string Name { get; set; }
+        public ElementId Id { get; set; }
+        public string UniqueId { get; set; }
+        public View View { get; set; }
     }
 }

@@ -304,7 +304,7 @@ namespace WpfApps
 
 
         //视图精度设置
-        private void DeLevle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DeLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dbItem == null)
             {
@@ -348,7 +348,7 @@ namespace WpfApps
         }
 
         //显示模式设置
-        private void DsStyle_selectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DsStyle_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dbItem == null)
             {

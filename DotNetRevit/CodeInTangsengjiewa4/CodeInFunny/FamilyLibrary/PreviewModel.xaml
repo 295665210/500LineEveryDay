@@ -49,7 +49,7 @@
                     HorizontalAlignment="Center"
                     Margin="10,0,110,0">
             <Label Content="模型精度"
-                   Margin="010,0,20"
+                   Margin="0,10,0,20"
                    Padding="5" />
             <ComboBox x:Name="deLevel"
                       Margin="0,15,20,20"
