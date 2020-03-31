@@ -37,6 +37,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RAPWPF">
+      <HintPath>..\..\..\..\githubColone2\revitapisamples\Thirdparty\RevitApp.com\RAPWPF.dll</HintPath>
+    </Reference>
     <Reference Include="RevitAPI">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
     </Reference>
@@ -69,6 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotation\Cmd_SectionGap.cs" />
+    <Compile Include="CodeInFunny\BatchUpGrader\Command.cs" />
+    <Compile Include="CodeInFunny\BatchUpGrader\FormUpgrade.xaml.cs">
+      <DependentUpon>FormUpgrade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CodeInFunny\FamilyLibrary\Commands.cs" />
     <Compile Include="CodeInFunny\FamilyLibrary\DBDocumentItem.cs" />
     <Compile Include="CodeInFunny\FamilyLibrary\DBViewItem.cs" />
@@ -81,6 +88,10 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>StartConfig.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodeInFunny\GridCreation\Command.cs" />
+    <Compile Include="CodeInFunny\GridCreation\FormCreation.xaml.cs">
+      <DependentUpon>FormCreation.xaml</DependentUpon>
     </Compile>
     <Compile Include="CodeInHuanGS\Cmd_Geometry.cs" />
     <Compile Include="Prototype\Cmd_CopyViewCropRegion.cs" />
@@ -217,7 +228,15 @@
     <Folder Include="Structure\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CodeInFunny\BatchUpGrader\FormUpgrade.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CodeInFunny\FamilyLibrary\PreviewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeInFunny\GridCreation\FormCreation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
