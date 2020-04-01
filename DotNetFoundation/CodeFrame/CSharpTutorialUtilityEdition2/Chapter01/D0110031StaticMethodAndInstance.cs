@@ -31,8 +31,8 @@ namespace CSharpTutorialUtilityEdition2.Chapter01
 
     public class UseMethod
     {
-        private static int x = 0; //静态字段
-        private int y = 1; //实例字段
+        private static int x; //静态字段
+        private int y; //实例字段
 
         public static void StaticMethod()
         {

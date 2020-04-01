@@ -7,12 +7,11 @@
     <ProjectGuid>{77E6719D-D9D9-4909-B1E8-E446F91B8DAB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeInTangsengjiewa4</RootNamespace>
-    <AssemblyName>CodeInTangsengjiewa4</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>CodeInTangsengjiewa</RootNamespace>
+    <AssemblyName>CodeInTangsengjiewa</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
