@@ -40,6 +40,7 @@ namespace CodeInTangsengjiewa4.CodeOfQian.AddTextNoteToGroup.UIs
             {
                 this.m_Doc = groups.First().Document;
             }
+            this.ListViewLeft.ItemsSource = groups;
             this.TextBoxViewPlan.Text = view.Name;
             this.m_UnSelectedGroups = groups;
             this.m_UnSelectedGroups.Sort(new GroupComparer());

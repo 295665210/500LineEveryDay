@@ -1,4 +1,4 @@
-﻿<Window x:Class="HiTools.Cmd.UIs.GroupSelectForm"
+﻿<Window x:Class="CodeInTangsengjiewa4.CodeOfQian.AddTextNoteToGroup.UIs.GroupSelectForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -49,9 +49,9 @@
         <ListView Name="ListViewLeft" Grid.Column="0" Grid.Row="1" BorderBrush="Black" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="组名称" Width="200" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="组名称" Width="100" DisplayMemberBinding="{Binding Path=Name}" />
                     <GridViewColumn Header="楼层" Width="70" DisplayMemberBinding="{Binding Path=LevelId}" />
-                    <GridViewColumn Header="ElementId" Width="200" DisplayMemberBinding="{Binding Path=Id}" />
+                    <GridViewColumn Header="ElementId" Width="100" DisplayMemberBinding="{Binding Path=Id}" />
                 </GridView>
             </ListView.View>
         </ListView>

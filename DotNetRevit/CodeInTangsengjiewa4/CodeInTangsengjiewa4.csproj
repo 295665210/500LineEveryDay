@@ -96,6 +96,10 @@
     </Compile>
     <Compile Include="CodeInHuanGS\Cmd_SearchAllLevel.cs" />
     <Compile Include="CodeInHuanGS\Cmd_Geometry.cs" />
+    <Compile Include="CodeOfQian\AddTextNoteToGroup3\AddTextNoteToGroup.cs" />
+    <Compile Include="CodeOfQian\AddTextNoteToGroup3\UIs\GroupSelectForm.xaml.cs">
+      <DependentUpon>GroupSelectForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Prototype\Cmd_CopyViewCropRegion.cs" />
     <Compile Include="Prototype\Cmd_HideRevitInstance.cs" />
     <Compile Include="Prototype\Cmd_LengthAccumulate.cs" />
@@ -239,6 +243,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CodeInFunny\GridCreation\FormCreation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeOfQian\AddTextNoteToGroup3\UIs\GroupSelectForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
