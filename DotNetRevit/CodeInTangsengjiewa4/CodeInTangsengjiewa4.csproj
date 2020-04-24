@@ -94,6 +94,7 @@
     <Compile Include="CodeInFunny\GridCreation\FormCreation.xaml.cs">
       <DependentUpon>FormCreation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CodeInHuanGS\Cmd_CreateLevel.cs" />
     <Compile Include="CodeInHuanGS\Cmd_SearchAllLevel.cs" />
     <Compile Include="CodeInHuanGS\Cmd_Geometry.cs" />
     <Compile Include="CodeOfQian\AddTextNoteToGroup3\AddTextNoteToGroup.cs" />

@@ -21,7 +21,7 @@
                     HorizontalAlignment="Stretch">
             <Label Content="筛选关键字:" Margin="10" />
             <TextBox Name="TextBoxKeyWord" TextWrapping="Wrap" Text="" MinHeight="30" MinWidth="200" Margin="10"
-                     BorderBrush="Black" TextAlignment="Center" />
+                     BorderBrush="Black" TextAlignment="Center" VerticalContentAlignment="Center" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center"
@@ -29,7 +29,7 @@
             <Label Content="平面视图:" Margin="10" />
             <TextBox Name="TextBoxViewPlan" TextWrapping="Wrap" Text="" MinHeight="30" MinWidth="200" Margin="10"
                      Background="Silver"
-                     TextAlignment="Center" />
+                     TextAlignment="Center"  VerticalContentAlignment="Center"/>
         </StackPanel>
 
 
@@ -49,9 +49,9 @@
         <ListView Name="ListViewLeft" Grid.Column="0" Grid.Row="1" BorderBrush="Black" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="组名称" Width="100" DisplayMemberBinding="{Binding Path=Name}" />
-                    <GridViewColumn Header="楼层" Width="70" DisplayMemberBinding="{Binding Path=LevelId}" />
-                    <GridViewColumn Header="ElementId" Width="100" DisplayMemberBinding="{Binding Path=Id}" />
+                    <GridViewColumn Header="组名称" Width="70" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="楼层" Width="70" DisplayMemberBinding="{Binding Path=LevelId.ToString}" />
+                    <GridViewColumn Header="ElementId" Width="70" DisplayMemberBinding="{Binding Path=Id}" />
                 </GridView>
             </ListView.View>
         </ListView>
