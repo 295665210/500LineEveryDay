@@ -1,0 +1,24 @@
+﻿<Window x:Class="LayoutPanels.SimpleStack"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutPanels"
+        mc:Ignorable="d"
+        Title="SimpleStack" Height="223" Width="354">
+    <Grid>
+
+        <StackPanel Margin="0,10,10.2,0" Name="StackPanel1">
+            <Label> A Button Stack</Label>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button1</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button2</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button3</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button4</Button>
+
+            <CheckBox Name="ChkVertical" Margin="10" HorizontalAlignment="Center" 
+                      Checked="ChkVertical_Checked" Unchecked="ChkVertical_Unchecked">
+                use vertical Orientation
+            </CheckBox>
+        </StackPanel>
+    </Grid>
+</Window>
