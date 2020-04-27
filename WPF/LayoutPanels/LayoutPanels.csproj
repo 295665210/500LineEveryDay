@@ -58,6 +58,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="LocalizableText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LayoutRoundingTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DoubleSplitWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BasicDialogBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SimpleStack.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +89,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LocalizableText.xaml.cs">
+      <DependentUpon>LocalizableText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutRoundingTest.xaml.cs">
+      <DependentUpon>LayoutRoundingTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoubleSplitWindow.xaml.cs">
+      <DependentUpon>DoubleSplitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicDialogBox.xaml.cs">
+      <DependentUpon>BasicDialogBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="SimpleStack.xaml.cs">
       <DependentUpon>SimpleStack.xaml</DependentUpon>
