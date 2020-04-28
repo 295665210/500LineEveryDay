@@ -58,6 +58,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="TheUniformGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TextBoxColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SplitWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleInkCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleDock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SharedSizeGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LocalizableText.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +121,30 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TheUniformGrid.xaml.cs">
+      <DependentUpon>TheUniformGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxColumn.xaml.cs">
+      <DependentUpon>TextBoxColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplitWindow.xaml.cs">
+      <DependentUpon>SplitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleInkCanvas.xaml.cs">
+      <DependentUpon>SimpleInkCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleGrid.xaml.cs">
+      <DependentUpon>SimpleGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleDock.xaml.cs">
+      <DependentUpon>SimpleDock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleCanvas.xaml.cs">
+      <DependentUpon>SimpleCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharedSizeGroup.xaml.cs">
+      <DependentUpon>SharedSizeGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizableText.xaml.cs">
       <DependentUpon>LocalizableText.xaml</DependentUpon>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="LayoutPanels.SimpleInkCanvas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SharedSizeGroup" Height="321.6" Width="380.8">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="5" Orientation="Horizontal">
+            <TextBlock Margin="5">EditingMode:</TextBlock>
+            <ComboBox Name="lstEditionMode" VerticalAlignment="Center"></ComboBox>
+        </StackPanel>
+
+        <InkCanvas Name="InkCanvas" Grid.Row="1" Background="LightYellow" EditingMode="{Binding ElementName=lstEditionMode,Path=SelectedItem}">
+            <Button InkCanvas.Top="10" InkCanvas.Left="10">Hello</Button>
+        </InkCanvas>
+    </Grid>
+</Window>
