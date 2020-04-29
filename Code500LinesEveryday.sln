@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EightBalls", "WPF\EightBall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutPanels", "WPF\LayoutPanels\LayoutPanels.csproj", "{3315CA2F-F3BB-4E1F-BAC8-36548B288788}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutedEvents", "WPF\RoutedEvents\RoutedEvents.csproj", "{78BC3BDD-3290-40CE-B229-F1BC77526AE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,14 @@ Global
 		{3315CA2F-F3BB-4E1F-BAC8-36548B288788}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3315CA2F-F3BB-4E1F-BAC8-36548B288788}.Release|x86.ActiveCfg = Release|Any CPU
 		{3315CA2F-F3BB-4E1F-BAC8-36548B288788}.Release|x86.Build.0 = Release|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Debug|x86.Build.0 = Debug|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +179,7 @@ Global
 		{1FD3738A-4B75-43B6-B066-2E1D169851A1} = {BFB529C1-5E7F-48E6-96C2-AB10D2200E7A}
 		{CB9B0C80-3167-484A-82F6-6F67BDF0F67B} = {1FD3738A-4B75-43B6-B066-2E1D169851A1}
 		{3315CA2F-F3BB-4E1F-BAC8-36548B288788} = {1FD3738A-4B75-43B6-B066-2E1D169851A1}
+		{78BC3BDD-3290-40CE-B229-F1BC77526AE7} = {1FD3738A-4B75-43B6-B066-2E1D169851A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3AD925E7-74B9-4ED0-8CEA-2E354AEAED41}
