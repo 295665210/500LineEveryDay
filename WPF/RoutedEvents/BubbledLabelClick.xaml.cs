@@ -23,5 +23,25 @@ namespace RoutedEvents
         {
             InitializeComponent();
         }
+
+        protected int EventCounter = 0;
+
+        private void SomethingClicked(object sender, MouseButtonEventArgs e)
+        {
+            EventCounter++;
+            string message = "#" + EventCounter.ToString() + ":\r\n" +
+                "sender:  " + sender.ToString() + "\r\n" +
+                "source:  " + e.Source + "\r\n" +
+                "original source:  " + e.OriginalSource;
+
+            lstMessage.Items.Add(message);
+            e.Handled = (bool) chkHandle.IsChecked;
+        }
+
+        private void cmdClear_Click(object sender, RoutedEventArgs e)
+        {
+            EventCounter = 0;
+            lstMessage.Items.Clear();
+        }
     }
 }

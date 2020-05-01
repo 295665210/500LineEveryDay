@@ -55,7 +55,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TunneledKeyPress.xaml.cs">
+      <DependentUpon>TunneledKeyPress.xaml</DependentUpon>
+    </Compile>
     <Page Include="BubbledLabelClick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ButtonMouseUpEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DragAndDrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Focus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyModifiers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyPressEvents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,6 +93,21 @@
     <Compile Include="BubbledLabelClick.xaml.cs">
       <DependentUpon>BubbledLabelClick.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ButtonMouseUpEvent.xaml.cs">
+      <DependentUpon>ButtonMouseUpEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDrop.xaml.cs">
+      <DependentUpon>DragAndDrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Focus.xaml.cs">
+      <DependentUpon>Focus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyModifiers.xaml.cs">
+      <DependentUpon>KeyModifiers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyPressEvents.xaml.cs">
+      <DependentUpon>KeyPressEvents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -78,10 +116,28 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MousePosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OnlyNumbers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TunneledKeyPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MousePosition.xaml.cs">
+      <DependentUpon>MousePosition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyNumbers.xaml.cs">
+      <DependentUpon>OnlyNumbers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -107,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="happyface.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

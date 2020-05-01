@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoutedEvents"
         mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800">
+        Title="Menu" Height="291" Width="237" Visibility="Visible">
     <Grid>
         <StackPanel Margin="5" Button.Click="ButtonClick" Focusable="False">
-            <Button>BubbleLabelClick</Button>
+            <Button>BubbledLabelClick</Button>
             <Button>TunneledKeyPress</Button>
             <Button>ButtonMouseUpEvent</Button>
+            <Button>KeyPressEvents</Button>
             <Button>OnlyNumbers</Button>
             <Button>KeyModifiers</Button>
             <Button>Focus</Button>

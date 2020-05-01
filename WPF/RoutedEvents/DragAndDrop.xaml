@@ -1,0 +1,29 @@
+﻿<Window x:Class="RoutedEvents.DragAndDrop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutedEvents"
+        mc:Ignorable="d"
+        Title="DragAndDrop" Height="250" Width="390">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBox Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center">Drag from this TextBox</TextBox>
+        <Label Grid.Column="1" Padding="20" Background="LightGoldenrodYellow" VerticalAlignment="Center"
+               HorizontalAlignment="Center" MouseDown="lblSource_MouseDown">
+            or this label
+        </Label>
+
+        <Label Grid.Row="1" Grid.ColumnSpan="2" Background="LightGoldenrodYellow" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" AllowDrop="True" Drop="lblTarget_Drop">to this label</Label>
+
+
+    </Grid>
+</Window>

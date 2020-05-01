@@ -1,0 +1,18 @@
+﻿<Window x:Class="RoutedEvents.OnlyNumbers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutedEvents"
+        mc:Ignorable="d"
+        Title="OnlyNumbers" Height="300" Width="300">
+    <Grid>
+        <StackPanel Margin="5" PreviewTextInput="pnl_PreviewTextInput" PreviewKeyDown="pnl_PreviewKeyDown">
+            <TextBox Margin="3" AcceptsTab="False" />
+            <TextBox Margin="3" />
+            <TextBox Margin="3" />
+
+            <TextBox Margin="3" Text="这个案例示意:TextBox里只能输入数字,不能输入其他内容."/>
+        </StackPanel>
+    </Grid>
+</Window>

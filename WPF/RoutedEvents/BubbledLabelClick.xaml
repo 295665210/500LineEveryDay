@@ -6,24 +6,30 @@
         xmlns:local="clr-namespace:RoutedEvents"
         mc:Ignorable="d"
         Title="BubbledLabelClick" Height="359" Width="329"
-        MouseUp="SomethingClicked"
-        >
+        MouseUp="SomethingClicked">
     <Grid Margin="3" MouseUp="SomethingClicked">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-       <Label Margin="5" Background="AliceBlue" BorderBrush="Black" BorderThickness="1" MouseUp="SomethingClicked" HorizontalAlignment="Left">
-           <StackPanel MouseUp="SomethingClicked">
-               <TextBlock Margin="3" MouseUp="SomethingClicked">
-                   Image and Picture label
-                   <Image Source=""></Image>
-               </TextBlock>
-           </StackPanel>
-       </Label>
-        
+        <Label Margin="5" Background="AliceBlue" BorderBrush="Black" BorderThickness="1" MouseUp="SomethingClicked"
+               HorizontalAlignment="Left">
+            <StackPanel MouseUp="SomethingClicked">
+                <TextBlock Margin="3" MouseUp="SomethingClicked">
+                    Image and Picture label
+                    <Image Source="happyface.jpg" Stretch="None" MouseUp="SomethingClicked" />
+                    <TextBlock Margin="3" MouseUp="SomethingClicked">Courtesy of the StackPanel</TextBlock>
+                </TextBlock>
+            </StackPanel>
+        </Label>
+
+
+        <ListBox Margin="5" Name="lstMessage" Grid.Row="1" />
+        <CheckBox Margin="5" Grid.Row="2" Name="chkHandle">Handle first event</CheckBox>
+        <Button Click="cmdClear_Click" Grid.Row="3" HorizontalAlignment="Right" Margin="5" Padding="3" />
+
     </Grid>
 </Window>

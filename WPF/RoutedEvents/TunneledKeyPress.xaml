@@ -1,0 +1,40 @@
+﻿<Window x:Class="RoutedEvents.TunneledKeyPress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutedEvents"
+        mc:Ignorable="d"
+        Title="TunneledKeyPress" Height="400" Width="400">
+    <Grid Margin="3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Margin="5" Background="AliceBlue" BorderBrush="Black" BorderThickness="1"
+               HorizontalContentAlignment="Stretch" PreviewKeyDown="SomeKeyPressed">
+            <StackPanel 
+                PreviewKeyDown="SomeKeyPressed">
+                <TextBlock Margin="3" HorizontalAlignment="Center" 
+                           PreviewKeyDown="SomeKeyPressed">
+                      Image and text label
+                </TextBlock>
+                <Image Source="happyface.jpg" Stretch="None" 
+                       PreviewKeyDown="SomeKeyPressed" />
+                <DockPanel Margin="0 5 0 0" PreviewKeyDown="SomeKeyPressed">
+                    <TextBlock Margin="3" PreviewKeyDown="SomeKeyPressed">
+                        Type here:
+                    </TextBlock>
+                    <TextBox  PreviewKeyDown="SomeKeyPressed" KeyDown="SomeKeyPressed" />
+                </DockPanel>
+            </StackPanel>
+        </Label>
+
+        <ListBox Margin="5" Name="LstMessages" Grid.Row="1" />
+        <CheckBox Margin="5" Grid.Row="2" Name="ChkHandle">Handle first event</CheckBox>
+        <Button Click="CmdClear_Click" Grid.Row="3" HorizontalAlignment="Right" Margin="5" Padding="3">Clear List</Button>
+    </Grid>
+</Window>
