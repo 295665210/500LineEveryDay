@@ -1,0 +1,115 @@
+﻿<Window x:Class="RevitFoundation.CodeInQuick.CreatehengjiaRebarWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:RevitFoundation.PracticeBookInRevit.UIs"
+        Title="TC桁架工具"
+
+        ResizeMode="NoResize"
+        Height="245"
+        Width="268"
+        WindowStartupLocation="CenterScreen"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <GroupBox
+            Header="桁架筋规格"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="82"
+            Height="177"
+            Margin="10,10,0,0">
+            <StackPanel>
+                <RadioButton
+                    Name="A80"
+                    Content="A80"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <RadioButton
+                    Name="A90"
+                    Content="A90"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <RadioButton
+                    Name="A100"
+                    Content="A100"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <RadioButton
+                    Name="B80"
+                    Content="B80"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <RadioButton
+                    Name="B90"
+                    Content="B90"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <RadioButton
+                    Name="B100"
+                    Content="B100"
+                    Margin="5"
+                    Checked="type_Checked" />
+                <TextBlock
+                    Name="m_type"
+                    Visibility="Hidden" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox
+            Header="设置"
+            HorizontalAlignment="Left"
+            Height="177"
+            Margin="97,10,0,0"
+            VerticalAlignment="Top"
+            Width="143">
+            <Canvas>
+                <TextBlock
+                    Text="桁架长度:"
+                    Canvas.Left="10"
+                    Canvas.Top="16" />
+                <TextBox
+                    Name="totalLength"
+                    Text="2900"
+                    Padding="0,2,0,0"
+                    Canvas.Left="66"
+                    Canvas.Top="9"
+                    Width="52"
+                    Height="22" />
+                <TextBlock
+                    Text="板内埋深:"
+                    Canvas.Left="10"
+                    Canvas.Top="48" />
+                <TextBox
+                    Name="subLength"
+                    Text="30"
+                    Padding="0,2,0,0"
+                    Canvas.Left="66"
+                    Canvas.Top="41"
+                    Width="52"
+                    Height="22" />
+                <TextBlock
+                    Text="方向:"
+                    Canvas.Left="10"
+                    Canvas.Top="76" />
+                <RadioButton
+                    Name="vertical"
+                    Content="↑"
+                    Canvas.Left="42"
+                    Canvas.Top="77" />
+                <RadioButton
+                    Name="horizon"
+                    Content="→"
+                    Canvas.Left="87"
+                    Canvas.Top="77" />
+                <Button
+                    Content="选择主体"
+                    Width="108"
+                    Height="25"
+                    VerticalAlignment="Bottom"
+                    Canvas.Left="10"
+                    Canvas.Top="115"
+                    Click="Button_Click" />
+            </Canvas>
+        </GroupBox>
+    </Grid>
+</Window>

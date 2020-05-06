@@ -148,6 +148,13 @@
     <Compile Include="ClassMyTest\E1001RunSample1.cs" />
     <Compile Include="ClassMyTest\Utils.cs" />
     <Compile Include="CodeInJeremytammik\Cmd_GetViewSheetFromView.cs" />
+    <Compile Include="CodeInQuick\BlackToWhite.cs" />
+    <Compile Include="CodeInQuick\CleanSectionView.cs" />
+    <Compile Include="CodeInQuick\CreateDimForWall.cs" />
+    <Compile Include="CodeInQuick\CreatehengjiaRebar.xaml.cs">
+      <DependentUpon>CreatehengjiaRebar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeInQuick\Method.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Commands\ExternalCommand.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\Tools.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\DelegateCommand.cs" />
@@ -294,6 +301,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="CodeInQuick\CreatehengjiaRebar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CodeInSDK\AutoCreateFloors\Views\CreateFloorsMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
