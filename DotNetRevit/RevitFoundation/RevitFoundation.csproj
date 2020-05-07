@@ -151,6 +151,7 @@
     <Compile Include="CodeInQuick\BlackToWhite.cs" />
     <Compile Include="CodeInQuick\CleanSectionView.cs" />
     <Compile Include="CodeInQuick\CreateDimForWall.cs" />
+    <Compile Include="CodeInQuick\CreatehengjiaRebar.cs" />
     <Compile Include="CodeInQuick\CreatehengjiaRebar.xaml.cs">
       <DependentUpon>CreatehengjiaRebar.xaml</DependentUpon>
     </Compile>

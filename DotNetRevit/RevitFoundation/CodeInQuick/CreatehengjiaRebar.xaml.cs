@@ -57,60 +57,60 @@ namespace RevitFoundation.CodeInQuick
         // [EditorBrowsable(EditorBrowsableState.Never)]
         // [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
         // [DebuggerNonUserCode]
-        // void IComponentConnector.Connect(int connectionId, object target)
-        // {
-        //     switch (connectionId)
-        //     {
-        //     case 1:
-        //         ((CreatehengjiaRebarWPF) target).PreviewKeyDown += this.Window_PreviewKeyDown;
-        //         break;
-        //     case 2:
-        //         this.A80 = (RadioButton) target;
-        //         this.A80.Checked += this.type_Checked;
-        //         break;
-        //     case 3:
-        //         this.A90 = (RadioButton) target;
-        //         this.A90.Checked += this.type_Checked;
-        //         break;
-        //     case 4:
-        //         this.A100 = (RadioButton) target;
-        //         this.A100.Checked += this.type_Checked;
-        //         break;
-        //     case 5:
-        //         this.B80 = (RadioButton) target;
-        //         this.B80.Checked += this.type_Checked;
-        //         break;
-        //     case 6:
-        //         this.B90 = (RadioButton) target;
-        //         this.B90.Checked += this.type_Checked;
-        //         break;
-        //     case 7:
-        //         this.B100 = (RadioButton) target;
-        //         this.B100.Checked += this.type_Checked;
-        //         break;
-        //     case 8:
-        //         this.m_type = (TextBlock) target;
-        //         break;
-        //     case 9:
-        //         this.totalLength = (TextBox) target;
-        //         break;
-        //     case 10:
-        //         this.subLength = (TextBox) target;
-        //         break;
-        //     case 11:
-        //         this.vertical = (RadioButton) target;
-        //         break;
-        //     case 12:
-        //         this.horizon = (RadioButton) target;
-        //         break;
-        //     case 13:
-        //         ((Button) target).Click += this.Button_Click;
-        //         break;
-        //     default:
-        //         this._contentLoaded = true;
-        //         break;
-        //     }
-        // }
+        void IComponentConnector.Connect(int connectionId, object target)
+        {
+            switch (connectionId)
+            {
+            case 1:
+                ((CreatehengjiaRebarWPF) target).PreviewKeyDown += this.Window_PreviewKeyDown;
+                break;
+            case 2:
+                this.A80 = (RadioButton) target;
+                this.A80.Checked += this.type_Checked;
+                break;
+            case 3:
+                this.A90 = (RadioButton) target;
+                this.A90.Checked += this.type_Checked;
+                break;
+            case 4:
+                this.A100 = (RadioButton) target;
+                this.A100.Checked += this.type_Checked;
+                break;
+            case 5:
+                this.B80 = (RadioButton) target;
+                this.B80.Checked += this.type_Checked;
+                break;
+            case 6:
+                this.B90 = (RadioButton) target;
+                this.B90.Checked += this.type_Checked;
+                break;
+            case 7:
+                this.B100 = (RadioButton) target;
+                this.B100.Checked += this.type_Checked;
+                break;
+            case 8:
+                this.m_type = (TextBlock) target;
+                break;
+            case 9:
+                this.totalLength = (TextBox) target;
+                break;
+            case 10:
+                this.subLength = (TextBox) target;
+                break;
+            case 11:
+                this.vertical = (RadioButton) target;
+                break;
+            case 12:
+                this.horizon = (RadioButton) target;
+                break;
+            case 13:
+                ((Button) target).Click += this.Button_Click;
+                break;
+            default:
+                this._contentLoaded = true;
+                break;
+            }
+        }
 
 
         public bool Iscontinue = false;
