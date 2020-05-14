@@ -148,7 +148,9 @@
     <Compile Include="ClassMyTest\E1001RunSample1.cs" />
     <Compile Include="ClassMyTest\Utils.cs" />
     <Compile Include="CodeInJeremytammik\Cmd_GetViewSheetFromView.cs" />
+    <Compile Include="CodeInQuick\AWallSelection.cs" />
     <Compile Include="CodeInQuick\BlackToWhite.cs" />
+    <Compile Include="CodeInQuick\ChangeDistance.cs" />
     <Compile Include="CodeInQuick\CleanSectionView.cs" />
     <Compile Include="CodeInQuick\CreateDimForWall.cs" />
     <Compile Include="CodeInQuick\CreatehengjiaRebar.cs" />
