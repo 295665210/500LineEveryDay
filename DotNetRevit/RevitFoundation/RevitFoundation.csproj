@@ -149,6 +149,7 @@
     <Compile Include="ClassMyTest\Utils.cs" />
     <Compile Include="CodeInJeremytammik\Cmd_GetViewSheetFromView.cs" />
     <Compile Include="CodeInQuick\AWallSelection.cs" />
+    <Compile Include="CodeInQuick\DisplaySomething.cs" />
     <Compile Include="CodeInQuick\BlackToWhite.cs" />
     <Compile Include="CodeInQuick\ChangeDistance.cs" />
     <Compile Include="CodeInQuick\CleanSectionView.cs" />
@@ -158,6 +159,10 @@
       <DependentUpon>CreatehengjiaRebar.xaml</DependentUpon>
     </Compile>
     <Compile Include="CodeInQuick\Method.cs" />
+    <Compile Include="CodeInQuick\Source\UpPipe\UpPipe.cs" />
+    <Compile Include="CodeInQuick\Source\UpPipe\uppipewpf.xaml.cs">
+      <DependentUpon>uppipewpf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CodeInSDK\AutoCreateFloors\Commands\ExternalCommand.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\Tools.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\DelegateCommand.cs" />
@@ -305,6 +310,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="CodeInQuick\CreatehengjiaRebar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeInQuick\Source\UpPipe\uppipewpf.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

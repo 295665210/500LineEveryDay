@@ -13,7 +13,7 @@ namespace RevitFoundation.CodeInQuick
 
     
     [Transaction(TransactionMode.Manual)]
-    internal class BlackToWhite : IExternalCommand
+    internal partial class BlackToWhite : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
