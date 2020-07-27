@@ -68,6 +68,7 @@
     <Reference Include="RevitAPI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIIFC">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIIFC.dll</HintPath>
@@ -80,6 +81,7 @@
     <Reference Include="RevitAPIUI, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUIMacros">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIUIMacros.dll</HintPath>
@@ -148,21 +150,6 @@
     <Compile Include="ClassMyTest\E1001RunSample1.cs" />
     <Compile Include="ClassMyTest\Utils.cs" />
     <Compile Include="CodeInJeremytammik\Cmd_GetViewSheetFromView.cs" />
-    <Compile Include="CodeInQuick\AWallSelection.cs" />
-    <Compile Include="CodeInQuick\DisplaySomething.cs" />
-    <Compile Include="CodeInQuick\BlackToWhite.cs" />
-    <Compile Include="CodeInQuick\ChangeDistance.cs" />
-    <Compile Include="CodeInQuick\CleanSectionView.cs" />
-    <Compile Include="CodeInQuick\CreateDimForWall.cs" />
-    <Compile Include="CodeInQuick\CreatehengjiaRebar.cs" />
-    <Compile Include="CodeInQuick\CreatehengjiaRebar.xaml.cs">
-      <DependentUpon>CreatehengjiaRebar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CodeInQuick\Method.cs" />
-    <Compile Include="CodeInQuick\Source\UpPipe\UpPipe.cs" />
-    <Compile Include="CodeInQuick\Source\UpPipe\uppipewpf.xaml.cs">
-      <DependentUpon>uppipewpf.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CodeInSDK\AutoCreateFloors\Commands\ExternalCommand.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\Tools.cs" />
     <Compile Include="CodeInSDK\AutoCreateFloors\Helpers\DelegateCommand.cs" />
@@ -190,6 +177,7 @@
     <Compile Include="CodeInSDK\CurvedBeam\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CodeInSDK\DeleteObject\DeleteObject.cs" />
     <Compile Include="Epplus\RevitDataToExcelDemo3.cs" />
     <Compile Include="ClassMyTest\CreateAdaptiveComponentFamily.cs" />
     <Compile Include="ClassMyTest\Cmd_CreateTrussA80.cs" />
@@ -234,6 +222,11 @@
     <Compile Include="PracticeBookInRevit\R0314JudgeViewOpened.cs" />
     <Compile Include="PracticeBookInRevit\UIs\ViewSelector.xaml.cs">
       <DependentUpon>ViewSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TheCodeInBook\Chapter03\R0504bFamilyCreat2.cs" />
     <Compile Include="TheCodeInBook\Chapter03\R0601未完ExclusionFilterw.cs" />
@@ -307,16 +300,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Page Include="CodeInQuick\CreatehengjiaRebar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CodeInQuick\Source\UpPipe\uppipewpf.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Folder Include="CodeInHu\" />
+  </ItemGroup>
+  <ItemGroup>
     <Page Include="CodeInSDK\AutoCreateFloors\Views\CreateFloorsMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -333,6 +320,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DisplacementPlay.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
