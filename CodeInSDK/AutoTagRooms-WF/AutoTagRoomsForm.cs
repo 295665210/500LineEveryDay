@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Architecture;
 
-namespace AutoTagRooms_WF
+namespace AutoTagRoomsWF
 {
     public partial class AutoTagRoomsForm : System.Windows.Forms.Form
     {

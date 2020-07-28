@@ -1,4 +1,4 @@
-﻿namespace AutoTagRooms_WF
+﻿namespace AutoTagRoomsWF
 {
     partial class AutoTagRoomsForm
     {
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        
+
 
         #region Windows Form Designer generated code
 
