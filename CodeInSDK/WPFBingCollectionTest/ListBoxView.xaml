@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPFBingCollectionTest.ListBoxView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WPFBingCollectionTest"
+        mc:Ignorable="d"
+        d:DesignHeight="350" d:DesignWidth="400">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0" Name="lb_Name" ItemsSource="{Binding Collection}" Margin="10" />
+
+        <ListBox Grid.Row="1" Name="lb_Name2" ItemsSource="{Binding Collection}" Margin="10">
+            <!-- 使用数据模板绑定类 和类里的属性 -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <UniformGrid Columns="3" HorizontalAlignment="Left" Width="200">
+                        <TextBlock Text="{Binding Name}" Margin="5" />
+                        <Border Width="5" Height="3" BorderThickness="2" BorderBrush="#FFAC4343" />
+                        <TextBlock Text="{Binding Id}" Margin="5" />
+                    </UniformGrid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Width="200" Height="50" Grid.Row="2" Background="Aqua"
+                   Text="{Binding ElementName=lb_Name2,Path=SelectedItem.Name}" />
+    </Grid>
+</Window>
