@@ -18,16 +18,33 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Type Of Beam" Height="30"
                    Margin="5" />
         <ComboBox Margin="5" Grid.Row="0" Grid.Column="1" Name="BeamTypeCB" Height="30" MinWidth="300"
-                  SelectedItem="{Binding CurrentSelectOfBeam}"
-                  ItemsSource="{Binding BeamTypesName}" />
+                  ItemsSource="{Binding BeamMaps}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <UniformGrid Columns="1">
+                        <TextBlock Text="{Binding Name}" Margin="2" />
+                    </UniformGrid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBlock Grid.Row="1" Grid.Column="0"
                    Text="Level" Height="30"
                    Margin="20 5 5 5 " />
         <ComboBox Margin="5" Grid.Row="1" Grid.Column="1"
                   Name="LevleCB"
-                  Height="30" MinWidth="300"
-                  SelectedItem="{Binding CurrentSelectOfLevel}"
-                  ItemsSource="{Binding LevelTypesName}" />
+                  Height="30" 
+                  MinWidth="300"
+                  ItemsSource="{Binding LevelMaps}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <UniformGrid Columns="1">
+                        <TextBlock Text="{Binding Name}" Margin="2" />
+                    </UniformGrid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+        
         <UniformGrid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Columns="3" Margin="10">
             <Button Content="Arc" Margin="10" Name="ArcBtn" Click="ArcBtn_OnClick" />
             <Button Content="Partial Ellipse" Margin="10" Name="EllipseBtn" Click="EllipseBtn_OnClick" />

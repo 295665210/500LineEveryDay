@@ -18,7 +18,6 @@ namespace CurvedBeam.Command
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
             CurvedBeamMainWindow mainWindow = new CurvedBeamMainWindow(commandData);
-          
             mainWindow.ShowDialog();
             return Result.Succeeded;
         }

@@ -14,8 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using CurvedBeam.ViewModel;
 
 
 namespace CurvedBeam.View
@@ -25,18 +27,50 @@ namespace CurvedBeam.View
     /// </summary>
     public partial class CurvedBeamMainWindow : Window
     {
-      
-        public CurvedBeamMainWindow(ExternalCommandData commandData)
+        private ExternalCommandData m_revit = null;
+        private CurvedBeamViewModel viewmodel = null;
+        private List<FamilySymbol> m_beamMaps;
+        private List<Level> m_levels;
+
+        private CurvedBeamMainWindow()
         {
             InitializeComponent();
-            // this.DataContext = new CurvedBeamViewModel(commandData, Close);
         }
 
-       
+        public CurvedBeamMainWindow(ExternalCommandData commandData)
+        {
+            m_revit = commandData;
+            InitializeComponent();
+            viewmodel = new CurvedBeamViewModel(commandData);
+            m_beamMaps = viewmodel.BeamMaps;
+            m_levels = viewmodel.LevelMaps;
+
+            this.DataContext = viewmodel;
+        }
+
 
         private void ArcBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            // Level locLev =LevleCB.SelectedItem.BeamMaps;
+            // Level level = LevleCB.SelectedItem as Level;
+            // string levelName = level.Name;
+            // MessageBox.Show(levelName);
+            //如果执行个一个revit的命令
+            Document doc = m_revit.Application.ActiveUIDocument.Document;
+            Transaction ts2 = new Transaction(m_revit.Application.ActiveUIDocument.Document,"在wpf里执行revit的命令");
+            ts2.Start();
+            var curve = Autodesk.Revit.DB.Line.CreateBound(new XYZ(0, 0, 0), new XYZ(100, 0, 0));
+
+            var beamType = BeamTypeCB.SelectedItem as FamilySymbol;
+            if (!beamType.IsActive)
+            {
+                beamType.Activate();
+            }
+
+            var levelType = LevleCB.SelectedItem as Level;
+
+            doc.Create.NewFamilyInstance(curve, beamType, levelType, StructuralType.Beam);
+            TaskDialog.Show("tips", "梁创建好了");
+            ts2.Commit();
         }
 
         private void EllipseBtn_OnClick(object sender, RoutedEventArgs e)

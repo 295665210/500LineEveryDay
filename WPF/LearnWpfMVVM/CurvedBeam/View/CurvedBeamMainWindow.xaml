@@ -6,27 +6,28 @@
         mc:Ignorable="d"
         Title="Curved Beam" Height="200" Width="450">
 
-     <Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="133*" />
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="270*"/>
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0"
                Content="Type of Beam:"
                HorizontalAlignment="Right"
-               Margin=" 0 0 40 0"
+               Margin="0,16,40,16"
                VerticalAlignment="Center" />
 
         <Label Grid.Row="1" Grid.Column="0"
                Content="Level:"
                HorizontalAlignment="Right"
-               Margin=" 0 0 40 0"
+               Margin="0,16,40,16"
                VerticalAlignment="Center" />
 
         <ComboBox Name="TypeOfBeamComboBox"
@@ -37,7 +38,7 @@
                   Height="25"
                   Width="200"
                   SelectedItem="{Binding CurrentSelectOfBeam,Mode =TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                  ItemsSource="{Binding BeamTypesName}" />
+                  ItemsSource="{Binding BeamTypesName}" Grid.ColumnSpan="2" Margin="0,16" />
 
         <ComboBox Name="LevelComboBox"
                   Grid.Row="1"
@@ -47,11 +48,11 @@
                   Height="25"
                   Width="200"
                   SelectedItem="{Binding CurrentSelectOfLevel,Mode =TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                  ItemsSource="{Binding LevelTypesName}" />
+                  ItemsSource="{Binding LevelTypesName}" Grid.ColumnSpan="2" Margin="0,16" />
 
         <UniformGrid Columns="3"
                      Grid.Row="2"
-                     Grid.ColumnSpan="2"
+                     Grid.ColumnSpan="3"
                      Margin="10">
             <Button Name="CreateBeamArc"
                     Content="Arc"
@@ -69,7 +70,7 @@
                     FontWeight="Bold"
                     Margin="5"
                     Command="{Binding StartCreateBeamSplineCommand}" />
-            
+
 
 
         </UniformGrid>
