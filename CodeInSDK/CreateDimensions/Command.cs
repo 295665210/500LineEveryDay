@@ -61,7 +61,8 @@ namespace CreateDimensions
             }
             catch (Exception e)
             {
-                message = e.Message;
+                // message = e.Message;
+                MessageBox.Show(e.ToString());
                 return Result.Failed;
             }
         }
@@ -183,7 +184,8 @@ namespace CreateDimensions
                 }
                 catch (Exception ex)
                 {
-                    m_errorMessage += ex.ToString();
+                    // m_errorMessage += ex.ToString();
+                    MessageBox.Show(ex.ToString());
                     return false;
                 }
             }
