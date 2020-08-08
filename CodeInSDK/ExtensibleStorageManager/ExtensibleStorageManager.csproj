@@ -45,6 +45,9 @@
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SchemaWrapperTools">
+      <HintPath>..\SchemaWrapperTools\bin\Debug\SchemaWrapperTools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -57,6 +60,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +73,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="User\StorageCommand.cs" />
+    <Compile Include="User\UIData.xaml.cs">
+      <DependentUpon>UIData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\UICommand.xaml.cs">
       <DependentUpon>UICommand.xaml</DependentUpon>
     </Compile>
@@ -81,6 +88,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="User\UIData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="User\UICommand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

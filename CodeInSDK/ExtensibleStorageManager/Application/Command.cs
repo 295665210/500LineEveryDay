@@ -22,7 +22,7 @@ namespace ExtensibleStorageManager
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            UIDocument dialog = new UICommand(commandData.Application.ActiveUIDocument.Document,
+            UICommand dialog = new UICommand(commandData.Application.ActiveUIDocument.Document,
                 commandData.Application.ActiveAddInId.GetGUID().ToString());
             dialog.ShowDialog();
 

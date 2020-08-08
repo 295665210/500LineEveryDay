@@ -44,5 +44,16 @@ namespace ExtensibleStorageManager
 
             return Result.Succeeded;
         }
+
+        /// <summary>
+        /// The last Schema Guid value used in the UICommand dialog is stored here for future retrieval after the dialog is closed.
+        /// </summary>
+        public static string LastGuid
+        {
+            get { return m_lastGuid; }
+            set { m_lastGuid = value; }
+        }
+
+        private static string m_lastGuid;
     }
 }
