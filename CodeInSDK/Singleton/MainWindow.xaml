@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Singleton"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
     <StackPanel>
         <Button Name="BtnOpen" Height="50" Width="100" Content="打开子窗体" Click="BtnOpen_Click" />
         <TextBox Name="TextBox"  Height="50" Width="100" TextChanged="TextBox_TextChanged" ></TextBox>

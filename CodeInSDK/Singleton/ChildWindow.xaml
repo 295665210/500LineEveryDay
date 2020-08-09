@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Singleton"
         mc:Ignorable="d"
-        Title="ChildWindow" Height="450" Width="800">
+        Title="ChildWindow" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Button Name="BtnShow" Height="50" Width="150" Click="BtnShow_Click" RenderTransformOrigin="0.5,0.504">展示主窗体的txtBox的值</Button>
     </Grid>

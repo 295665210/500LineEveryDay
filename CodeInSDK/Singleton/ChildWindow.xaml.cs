@@ -45,5 +45,16 @@ namespace Singleton
         {
             MessageBox.Show(SysCache.Instance.TextValue, "主窗体的值：");
         }
+
+        /// <summary>
+        /// 不重写，重复打开子窗体会报错。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     }
 }

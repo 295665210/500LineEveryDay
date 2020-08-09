@@ -44,5 +44,15 @@ namespace Singleton
             //通过缓存，实现父窗体与子窗体传值。类似全局变量。 
             SysCache.Instance.TextValue = TextBox.Text.Trim();
         }
+
+        /// <summary>
+        /// 程序关闭时，清理缓存。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
