@@ -11,6 +11,7 @@ using CodeInSDK.GetSetDefaultTypes.CS;
 namespace CodeInSDK.GetSetDefaultTypes
 {
     [Regeneration(RegenerationOption.Manual)]
+    [Transaction(TransactionMode.Manual)]
     class ThisCommand : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
