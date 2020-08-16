@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfDataGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDataGrid"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dgSimple" />
+
+        <StackPanel Grid.Column="1">
+            <DataGrid x:Name="dgCustom" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="编号" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                    <DataGridTextColumn Header="姓名" Binding="{Binding Name}" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button x:Name="btnShowAll" Content="全部显示" Click="btnShowAll_Click" />
+            <Button x:Name="btnShowChoose"
+                    Content="显示选中行" Click="BtnShowChoosed_Click" />
+        </StackPanel>
+
+    </Grid>
+</Window>

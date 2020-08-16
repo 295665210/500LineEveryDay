@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="CancelSave\CancelSave.cs" />
     <Compile Include="CancelSave\LogManager.cs" />
+    <Compile Include="CmdBoundingBox\CmdBoundingBox.cs" />
     <Compile Include="CreateDimensions\Command.cs" />
     <Compile Include="CreateFilters\CreateFilters.cs" />
     <Compile Include="CreateFilters\CreateFiltersMainWindow.xaml.cs">
@@ -72,6 +73,7 @@
     </Compile>
     <Compile Include="CreateFilters\Tools.cs" />
     <Compile Include="CreateViewSection\Command.cs" />
+    <Compile Include="Creator.cs" />
     <Compile Include="CurvedBeam\Command\ExternalCommands.cs" />
     <Compile Include="CurvedBeam\CurvedBeamMainWindow.xaml.cs">
       <DependentUpon>CurvedBeamMainWindow.xaml</DependentUpon>
@@ -98,12 +100,14 @@
     <Compile Include="GetSetDefaultTypes\ThisCommand.cs" />
     <Compile Include="InvisibleParam\Command.cs" />
     <Compile Include="MaterialQuantities\MaterialQuantities.cs" />
+    <Compile Include="MoveLinear\Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GetSetDefaultTypes\GetSetDefaultTypes.addin" />

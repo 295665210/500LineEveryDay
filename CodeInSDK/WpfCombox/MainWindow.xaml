@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfCombox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCombox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- 一般绑定 -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">一般绑定</TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="0" Name="CbNormal" Width="120" Height="30"
+                  SelectionChanged="CbNormal_SelectionChanged">
+            <ComboBoxItem Content="Combox1" />
+            <ComboBoxItem Content="Combox2" />
+            <ComboBoxItem Content="Combox3" />
+        </ComboBox>
+        <TextBox Grid.Row="2" Grid.Column="0" Name="TxBNormal" Width="150" Height="50" />
+
+        <!-- List绑定 -->
+        <TextBlock
+            HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"
+            Grid.Column="1">
+            List绑定
+        </TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="CbList" Width="120" Height="30"
+                  SelectionChanged="CbList_SelectionChanged" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="TxBList" Width="150" Height="50" />
+
+
+        <!-- 类的绑定 -->
+        <TextBlock
+            HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"
+            Grid.Column="2">
+            类绑定
+        </TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="2" Name="CbClass" Width="120" Height="30"
+                  SelectionChanged="CbClass_SelectionChanged" />
+        <TextBox Grid.Row="2" Grid.Column="2" Name="TxBClass" Width="150" Height="50" />
+
+    </Grid>
+</Window>
