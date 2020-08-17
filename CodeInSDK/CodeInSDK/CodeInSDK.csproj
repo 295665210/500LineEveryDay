@@ -66,6 +66,8 @@
     <Compile Include="CancelSave\CancelSave.cs" />
     <Compile Include="CancelSave\LogManager.cs" />
     <Compile Include="CmdBoundingBox\CmdBoundingBox.cs" />
+    <Compile Include="CmdBrepBuilder\CmdBrepBuilder.cs" />
+    <Compile Include="CmdDimensionWallsFindRefs\CmdDimensionWallsFindRefs.cs" />
     <Compile Include="CreateDimensions\Command.cs" />
     <Compile Include="CreateFilters\CreateFilters.cs" />
     <Compile Include="CreateFilters\CreateFiltersMainWindow.xaml.cs">
