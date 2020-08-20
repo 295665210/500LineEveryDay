@@ -67,7 +67,11 @@
     <Compile Include="CancelSave\LogManager.cs" />
     <Compile Include="CmdBoundingBox\CmdBoundingBox.cs" />
     <Compile Include="CmdBrepBuilder\CmdBrepBuilder.cs" />
-    <Compile Include="CmdDimensionWallsFindRefs\CmdDimensionWallsFindRefs.cs" />
+    <Compile Include="CmdCopyWallType\CmdCopyWallType.cs" />
+    <Compile Include="CmdDimensionWallsIterateFaces\CmdDimensionWallsIterateFaces.cs" />
+    <Compile Include="CmdDocumentVersion\CmdDocumentVersion.cs" />
+    <Compile Include="CmdDuplicateElements\CmdDuplicateElements.cs" />
+    <Compile Include="CmdEditFloor\CmdEditFloor.cs" />
     <Compile Include="CreateDimensions\Command.cs" />
     <Compile Include="CreateFilters\CreateFilters.cs" />
     <Compile Include="CreateFilters\CreateFiltersMainWindow.xaml.cs">
