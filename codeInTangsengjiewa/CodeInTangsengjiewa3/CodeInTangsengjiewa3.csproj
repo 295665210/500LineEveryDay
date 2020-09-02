@@ -69,6 +69,10 @@
     <Compile Include="BinLibrary\Extensions\ElementIdExtension.cs" />
     <Compile Include="BinLibrary\Extensions\GeometryElementExtension.cs" />
     <Compile Include="BinLibrary\Extensions\GeometryObjectExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\LineExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\MepCurveExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\PipeExtension.cs" />
+    <Compile Include="BinLibrary\Extensions\PointExtension.cs" />
     <Compile Include="BinLibrary\Extensions\TransactionExtension.cs" />
     <Compile Include="BinLibrary\Helpers\TransactionHelper.cs" />
     <Compile Include="BinLibrary\Extensions\VectorExtension.cs" />
