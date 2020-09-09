@@ -99,6 +99,15 @@
     <Compile Include="Test\Cmd_CalculateAreaOfShipment.cs" />
     <Compile Include="Test\Cmd_CalculateConcreteVolume.cs" />
     <Compile Include="Test\Cmd_CreateColumnAccordingGridIntersection.cs" />
+    <Compile Include="Test\Cmd_DimLine.cs" />
+    <Compile Include="Test\Cmd_DimPipe.cs" />
+    <Compile Include="Test\Cmd_EncodeElements.cs" />
+    <Compile Include="Test\Cmd_ExternalStorageDataTest.cs" />
+    <Compile Include="Test\Cmd_FlipTee.cs" />
+    <Compile Include="Test\Cmd_GetCuttedFace.cs" />
+    <Compile Include="Test\Cmd_InRegionTest.cs" />
+    <Compile Include="Test\Cmd_MeasureTool.cs" />
+    <Compile Include="Test\Cmd_MepcurveDirTest.cs" />
     <Compile Include="Test\UIs\AboutForm.xaml.cs">
       <DependentUpon>AboutForm.xaml</DependentUpon>
     </Compile>
