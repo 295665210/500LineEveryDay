@@ -1,0 +1,44 @@
+﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
+using 唐僧解瓦.机电.ToolUIs;
+
+namespace 唐僧解瓦.机电.ToolUIs
+{
+    /// <summary>
+    /// About.xaml 的交互逻辑
+    /// </summary>
+    public partial class MepcurveRank : Window
+    {
+        private static MepcurveRank instance;
+        public static MepcurveRank Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new MepcurveRank();
+                }
+                return instance;
+            }
+        }
+
+        public MepcurveRank()
+        {
+            InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            base.OnClosing(e);
+            this.Hide();
+        }
+    }
+}
