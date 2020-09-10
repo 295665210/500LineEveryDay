@@ -130,6 +130,10 @@
     </Compile>
     <Compile Include="机电\About\AboutCommand.cs" />
     <Compile Include="机电\Cmd_BreakWire.cs" />
+    <Compile Include="机电\Cmd_ChamferPipes.cs" />
+    <Compile Include="机电\Cmd_changeSystem.cs" />
+    <Compile Include="机电\Cmd_ConnectEquipMent.cs" />
+    <Compile Include="机电\Cmd_CutMepsInPieces.cs" />
     <Compile Include="机电\ToolUIs\ValueSettingUI.xaml.cs">
       <DependentUpon>ValueSettingUI.xaml</DependentUpon>
     </Compile>
