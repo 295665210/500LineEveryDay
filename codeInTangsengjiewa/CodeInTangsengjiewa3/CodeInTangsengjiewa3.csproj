@@ -97,7 +97,6 @@
     <Compile Include="BinLibrary\Extensions\XYZExtension.cs" />
     <Compile Include="BinLibrary\RevitHelper\RevitWindowHelper.cs" />
     <Compile Include="BinLibrary\Utils\Utils.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\Cmd_Updatefiles.cs" />
     <Compile Include="Test\Cmd_RotateTest.cs" />
@@ -127,6 +126,9 @@
     </Compile>
     <Compile Include="建筑\Cmd_BeamAlignToRoofAndFloor.cs" />
     <Compile Include="建筑\Cmd_CreateFloorQuickly.cs" />
+    <Compile Include="建筑\Cmd_CutFloorWithLine.cs" />
+    <Compile Include="建筑\Cmd_SetDefaultWallType.cs" />
+    <Compile Include="建筑\Utils.cs" />
     <Compile Include="机电\About\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -143,6 +145,7 @@
     <Compile Include="机电\ToolUIs\MepcurveRank.xaml.cs">
       <DependentUpon>MepcurveRank.xaml</DependentUpon>
     </Compile>
+    <Compile Include="通用\Cmd_3DregionView.cs" />
     <Compile Include="通用\UIs\FloorTypeSelector.xaml.cs">
       <DependentUpon>FloorTypeSelector.xaml</DependentUpon>
     </Compile>
@@ -152,10 +155,6 @@
     <EmbeddedResource Include="Test\UIs\ColumnTypesForm.resx">
       <DependentUpon>ColumnTypesForm.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -187,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="工具\" />
+    <Folder Include="结构\" />
     <Folder Include="高级\UIs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
