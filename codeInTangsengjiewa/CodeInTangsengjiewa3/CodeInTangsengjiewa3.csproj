@@ -146,6 +146,9 @@
       <DependentUpon>MepcurveRank.xaml</DependentUpon>
     </Compile>
     <Compile Include="通用\Cmd_3DregionView.cs" />
+    <Compile Include="通用\Cmd_CategoryFilter.cs" />
+    <Compile Include="通用\Cmd_ChangeBackGroundColor.cs" />
+    <Compile Include="通用\Cmd_ChangeType.cs" />
     <Compile Include="通用\UIs\FloorTypeSelector.xaml.cs">
       <DependentUpon>FloorTypeSelector.xaml</DependentUpon>
     </Compile>

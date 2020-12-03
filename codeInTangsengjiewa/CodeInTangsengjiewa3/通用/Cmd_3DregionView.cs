@@ -68,8 +68,10 @@ namespace CodeInTangsengjiewa3.通用
                 }
 
                 view.SetSectionBox(box);
-
+                view.LookupParameter("剖面框").Set(1);
             }, "创建三维视图");
+            uidoc.ActiveView = view;
+            return Result.Succeeded;
         }
 
         public View Create3DView(Document doc, PickedBox pickedbox)
