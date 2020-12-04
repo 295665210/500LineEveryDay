@@ -4,30 +4,27 @@ using System.Windows;
 namespace 唐僧解瓦.通用.UIs
 {
     /// <summary>
-    /// FloorTypeSelector.xaml 的交互逻辑
+    /// FloorSelector.xaml 的交互逻辑
     /// </summary>
-    public partial class FloorTypeSelector : Window
+    public partial class FloorSelector : Window
     {
-        public FloorTypeSelector()
-        {
-            InitializeComponent();
-        }
+        private static FloorSelector instance;
 
-        private static FloorTypeSelector instance;
-
-        public static FloorTypeSelector Instance
+        public static FloorSelector Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new FloorTypeSelector();
+                    instance =new FloorSelector();
                 }
                 return instance;
             }
         }
-       
-
+        private FloorSelector()
+        {
+            InitializeComponent();
+        }
 
         protected override void OnClosing(CancelEventArgs e)
         {

@@ -149,6 +149,12 @@
     <Compile Include="通用\Cmd_CategoryFilter.cs" />
     <Compile Include="通用\Cmd_ChangeBackGroundColor.cs" />
     <Compile Include="通用\Cmd_ChangeType.cs" />
+    <Compile Include="通用\Cmd_Floor3D.cs" />
+    <Compile Include="通用\Cmd_HideElementInfamilyDoc.cs" />
+    <Compile Include="通用\Cmd_MultipleLinkFile.cs" />
+    <Compile Include="通用\UIs\FloorSelector.xaml.cs">
+      <DependentUpon>FloorSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="通用\UIs\FloorTypeSelector.xaml.cs">
       <DependentUpon>FloorTypeSelector.xaml</DependentUpon>
     </Compile>
@@ -179,6 +185,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="机电\ToolUIs\MepcurveRank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="通用\UIs\FloorSelector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
