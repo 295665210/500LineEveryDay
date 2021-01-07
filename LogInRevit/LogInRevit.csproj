@@ -59,7 +59,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="QiShiLog">
-      <HintPath>..\..\..\..\胡老师\案例代码\QiShiLog.dll</HintPath>
+      <HintPath>..\..\胡老师\QiShiLog.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPI">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>

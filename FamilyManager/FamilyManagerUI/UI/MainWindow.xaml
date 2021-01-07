@@ -1,0 +1,93 @@
+﻿<Window x:Class="FamilyManagerUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FamilyManagerUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="730" Width="980"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+          
+        >
+    <Window.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="MaterialDesign.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="PrimaryMid"  Grid.Row="0"  Grid.ColumnSpan="3">
+            <DockPanel>
+                <Image Margin="20,0,0,0" HorizontalAlignment="Left" Source="/FamilyManagerUI;component/Assets/imageIcon.png"></Image>
+                <TextBlock Margin="-20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" >欢迎使用族库管理系统V1.0</TextBlock>
+            </DockPanel>
+
+        </materialDesign:ColorZone>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" Margin="20,0,0,0">族库路径：</TextBlock>
+            <TextBox  VerticalAlignment="Center" Margin="20,0,0,0" Width="400" Name="TextPath"></TextBox>
+            <Button VerticalAlignment="Bottom" Margin="20,0,0,9" Name="OpenBtn" Click="OpenBtn_Click">打开</Button>
+            <TextBlock VerticalAlignment="Center" Margin="40,0,0,0">关键词：</TextBlock>
+            <TextBox  VerticalAlignment="Top" Margin="20,12,0,0" Width="80" Name="SearchText"></TextBox>
+            <Button VerticalAlignment="Center" Margin="20,0,0,0"  Name="SerachBtn" Click="SerachBtn_Click">查询</Button>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="2" Background="#FFF1F1F1" Margin="10">
+            <StackPanel>
+                <TextBlock Text="族库展示" Margin="10" FontSize="22" FontWeight="Medium"/>
+                <StackPanel Margin="20 0">
+                    <ItemsControl x:Name="ListViewItems" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="10" Width="150" Height="220">
+                                    <StackPanel >
+                                        <Image Width="100" Height="100" Source="{Binding RfaImage}">
+                                        </Image>
+                                        <Button  Style="{StaticResource MaterialDesignRaisedLightButton}" Height="25" Margin="20,5,20,5"  Content="载入" Tag="{Binding}" Click="LoadBtn_Click" />
+                                        <TextBlock HorizontalAlignment="Center" Margin="5 0" Text="{Binding Name}" TextWrapping="Wrap" FontSize="10"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button    Style="{StaticResource MaterialDesignRaisedAccentButton}" VerticalAlignment="Center" Width="100"  Name="First"  Click="First_Click">首页</Button>
+            <Button   Style="{StaticResource MaterialDesignRaisedAccentButton}" VerticalAlignment="Center" Width="100"  Name="Backwards"  Margin="20,0,0,0" Click="Backwards_Click">上页</Button>
+
+            <TextBlock VerticalAlignment="Center" Width="120" Margin="20,0,0,0" Name="CurrentText">第几页</TextBlock>
+            <ComboBox   VerticalAlignment="Center" Width="60" Margin="20,0,0,0" Name='NumberOfRecords' SelectedIndex='0' SelectionChanged='NumberOfRecords_SelectionChanged'></ComboBox>
+            <Button   Style="{StaticResource MaterialDesignRaisedAccentButton}" VerticalAlignment="Center"  Width="100" Margin="20,0,0,0" Name="Forward"    Click='Forward_Click'>下页</Button>
+            <Button   Style="{StaticResource MaterialDesignRaisedAccentButton}"  VerticalAlignment="Center"  Width="100" Margin="20,0,0,0"  Name="Last"  Click="Last_Click">尾页</Button>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

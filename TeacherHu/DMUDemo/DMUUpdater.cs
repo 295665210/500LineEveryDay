@@ -41,12 +41,9 @@ namespace DMUDemo
                 TaskDialog.Show("提示", $"{wall.Name}说： hi，我体积变了  ");
             }
         }
-
+a
         //得到更新的ID
-        public UpdaterId GetUpdaterId()
-        {
-            return m_updaterId;
-        }
+        public UpdaterId GetUpdaterId() => m_updaterId;
 
         //优先搜索的对象，提高搜索效率
         public ChangePriority GetChangePriority()
