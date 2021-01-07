@@ -186,7 +186,7 @@ namespace FamilyManagerUI
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
             FamilyObject data = ((System.Windows.Controls.Button)sender).Tag as FamilyObject;
-            SysCache.Instance.CurrentRfaLocation = data.Locatoin;
+            SysCache.Instance.CurrentRfaLocation = data.Location;
             SysCache.Instance.LoadEvent.Raise();
             MessageBox.Show($"{ SysCache.Instance.CurrentRfaLocation}", "准备载入");
         }
@@ -230,7 +230,7 @@ namespace FamilyManagerUI
                     //Path:E:\课程录制\Revit二次开发进阶课程\测试文件\族文件\机械设备\多联机 - 室内机 - 双向气流 - 天花板嵌入式.rfa
                     Name = Path.GetFileNameWithoutExtension(item),//多联机 - 室内机 - 双向气流 - 天花板嵌入式
                     //  Path.GetFileName()  多联机 - 室内机 - 双向气流 - 天花板嵌入式.rfa
-                    Locatoin = item,
+                    Location = item,
                     RfaImage = bms
                 });
             }

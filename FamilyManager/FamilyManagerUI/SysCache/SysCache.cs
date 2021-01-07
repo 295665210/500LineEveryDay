@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Revit.UI;
 
-namespace FamilyManagerUI.SysCache
+namespace FamilyManagerUI
 {
     class SysCache
     {
@@ -27,7 +27,7 @@ namespace FamilyManagerUI.SysCache
 
         public ExternalEvent LoadEvent { get; set; } //建立外部事件
 
-        public string CurrentRfalocation { get; set; } //当前族路径
+        public string CurrentRfaLocation { get; set; } //当前族路径
 
     }
 }
