@@ -154,6 +154,7 @@
     <Compile Include="通用\Cmd_MultipleLinkFile.cs" />
     <Compile Include="通用\Cmd_netHeightAnalyses.cs" />
     <Compile Include="通用\Cmd_PickBox3D.cs" />
+    <Compile Include="通用\Cmd_UpdateFiles.cs" />
     <Compile Include="通用\UIs\FloorSelector.xaml.cs">
       <DependentUpon>FloorSelector.xaml</DependentUpon>
     </Compile>
