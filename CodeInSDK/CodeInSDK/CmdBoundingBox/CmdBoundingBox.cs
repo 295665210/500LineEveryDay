@@ -44,6 +44,7 @@
              b.Max = cornersTransformed.Max();
              b.Max += height * XYZ.BasisZ;
 
+
              return b;
          }
 
@@ -83,7 +84,7 @@
 
                      creator.DrawPolygon(new List<XYZ>(Util.GetBottomCorners(b)));
 
-                     Transform rotation = Transform.CreateRotation(XYZ.BasisZ, 60 * Math.PI / 180);
+                     Transform rotation = Transform.CreateRotation(XYZ.BasisZ,  Math.PI);
 
                      b = RotatedBoundingBox(b, rotation);
 
