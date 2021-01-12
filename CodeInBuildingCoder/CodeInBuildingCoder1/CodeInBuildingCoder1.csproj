@@ -66,6 +66,8 @@
     <Compile Include="CmdAnalyticalModelGeom.cs" />
     <Compile Include="CmdBoundingBox.cs" />
     <Compile Include="CmdBrepBuilder.cs" />
+    <Compile Include="CmdCategories.cs" />
+    <Compile Include="CmdCategorySupportsTypeParameter.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
