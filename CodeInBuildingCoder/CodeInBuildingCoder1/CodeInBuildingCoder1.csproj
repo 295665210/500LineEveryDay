@@ -68,8 +68,14 @@
     <Compile Include="CmdBrepBuilder.cs" />
     <Compile Include="CmdCategories.cs" />
     <Compile Include="CmdCategorySupportsTypeParameter.cs" />
+    <Compile Include="CmdChangeElementColor.cs" />
+    <Compile Include="CmdChangeLinkedFilePath.cs" />
+    <Compile Include="CmdCloseDocument.cs" />
+    <Compile Include="CmdColumnRound.cs" />
+    <Compile Include="CmdCoordsOfViewOnSheet.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

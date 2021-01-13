@@ -1179,9 +1179,8 @@ namespace CodeInBuildingCoder1
                 Debug.Print("\n" + caption + ":\n" + msg);
 
                 TaskDialog.Show(caption, msg);
-
-                return Result.Succeeded;
             }
+            return Result.Succeeded;
         }
 
         private bool BicSupportsInstanceParameters(BuiltInCategory bic)
