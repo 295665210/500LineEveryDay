@@ -73,6 +73,9 @@
     <Compile Include="CmdCloseDocument.cs" />
     <Compile Include="CmdColumnRound.cs" />
     <Compile Include="CmdCoordsOfViewOnSheet.cs" />
+    <Compile Include="CmdCreateGableWall.cs" />
+    <Compile Include="CmdCreateLineStyle.cs" />
+    <Compile Include="CmdCreateSharedParams.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.cs" />
