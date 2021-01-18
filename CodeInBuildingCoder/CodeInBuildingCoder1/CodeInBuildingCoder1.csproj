@@ -76,6 +76,8 @@
     <Compile Include="CmdCreateGableWall.cs" />
     <Compile Include="CmdCreateLineStyle.cs" />
     <Compile Include="CmdCreateSharedParams.cs" />
+    <Compile Include="CmdCropToRoom.cs" />
+    <Compile Include="CmdCurtainWallGeom.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.cs" />
