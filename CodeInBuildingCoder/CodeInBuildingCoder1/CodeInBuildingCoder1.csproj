@@ -78,6 +78,10 @@
     <Compile Include="CmdCreateSharedParams.cs" />
     <Compile Include="CmdCropToRoom.cs" />
     <Compile Include="CmdCurtainWallGeom.cs" />
+    <Compile Include="CmdDeleteUnusedRefPlanes.cs" />
+    <Compile Include="CmdDocumentVersion.cs" />
+    <Compile Include="CmdDuplicateElements.cs" />
+    <Compile Include="CmdEditFloor.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.cs" />
