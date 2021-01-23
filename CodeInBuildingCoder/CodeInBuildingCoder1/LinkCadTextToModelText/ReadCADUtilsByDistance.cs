@@ -58,7 +58,7 @@ namespace CodeInBuildingCoder1.LinkCadTextToModelText
 														cadtextModel.Text = mtext.Text;
 														cadtextModel.Angel = mtext.Rotation;
 														cadtextModel.Layer = mtext.Layer;
-														if (Line.CreateBound(cadtextModel.Location, location).Length < 7.0)
+														if (Line.CreateBound(cadtextModel.Location, location).Length != 0)
 														{
 															list.Add(cadtextModel);
 														}
@@ -71,7 +71,7 @@ namespace CodeInBuildingCoder1.LinkCadTextToModelText
 													cadtextModel.Text = dbtext.TextString;
 													cadtextModel.Angel = dbtext.Rotation;
 													cadtextModel.Layer = dbtext.Layer;
-													if (Line.CreateBound(cadtextModel.Location, location).Length < 7.0)
+													if (Line.CreateBound(cadtextModel.Location, location).Length != 0)
 													{
 														list.Add(cadtextModel);
 													}

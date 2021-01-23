@@ -14,4 +14,13 @@ namespace CodeInBuildingCoder1.LinkCadTextToModelText
         public double Angel { get; set; }
         public string Layer { get; set; }
     }
+
+    public class CADTextModelFamily
+    {
+        public ModelText modelText { get; set; }
+        public XYZ Location { get; set; }
+        public string Name { get; set; }
+        public double Angel { get; set; }
+        public string Layer { get; set; }
+    }
 }

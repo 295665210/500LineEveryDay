@@ -60,8 +60,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TD_Mgd">
-      <HintPath>..\..\..\ForkCode\Teigha_NET 包含各种版本的TD_Mgd\Teigha_Net64位版本\TD_Mgd.dll</HintPath>
+    <Reference Include="TD_Mgd_3.03_9">
+      <HintPath>..\..\..\ForkCode\29110_CreatBridgeForRevit2018（2018.1.22）\CreatBridgeForRevit2018（2018.1.22）\引用Dll\TD_Mgd_3.03_9.dll</HintPath>
     </Reference>
     <Reference Include="UIFrameworkServices">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\UIFrameworkServices.dll</HintPath>
@@ -90,6 +90,7 @@
     <Compile Include="CmdEditFloor.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="LinkCadTextToModelText\CADTextModel.cs" />
+    <Compile Include="LinkCadTextToModelText\CadTextToCreate.cs" />
     <Compile Include="LinkCadTextToModelText\CreateModelText.cs" />
     <Compile Include="LinkCadTextToModelText\Methord.cs" />
     <Compile Include="LinkCadTextToModelText\ReadCADUtilsByDistance.cs" />
