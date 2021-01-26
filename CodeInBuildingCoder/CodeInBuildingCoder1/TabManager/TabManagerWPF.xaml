@@ -1,0 +1,36 @@
+﻿<Window
+
+    
+    x:Class="CodeInBuildingCoder1.TabManager.TabManagerWPF"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    Height="540"
+    Width="160"
+    ResizeMode="NoResize"
+    Title="快速工具"
+    WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <ListBox
+            Name="listbox"
+            SelectionMode="Multiple"
+            Height="450"
+            Margin="5">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox
+                        IsChecked="{Binding IsSelected}"
+                        Content="{Binding CheckName}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+        <Button
+            Content="应用"
+            Height="23"
+            Width="80"
+            Margin="0,10,0,10"
+            Click="Button_Click" />
+    </StackPanel>
+</Window>

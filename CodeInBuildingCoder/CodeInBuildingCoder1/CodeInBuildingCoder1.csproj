@@ -63,6 +63,10 @@
     <Reference Include="TD_Mgd_3.03_9">
       <HintPath>..\..\..\ForkCode\29110_CreatBridgeForRevit2018（2018.1.22）\CreatBridgeForRevit2018（2018.1.22）\引用Dll\TD_Mgd_3.03_9.dll</HintPath>
     </Reference>
+    <Reference Include="UIFramework, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2018\UIFramework.dll</HintPath>
+    </Reference>
     <Reference Include="UIFrameworkServices">
       <HintPath>C:\Program Files\Autodesk\Revit 2020\UIFrameworkServices.dll</HintPath>
     </Reference>
@@ -89,6 +93,7 @@
     <Compile Include="CmdDuplicateElements.cs" />
     <Compile Include="CmdEditFloor.cs" />
     <Compile Include="Creator.cs" />
+    <Compile Include="LColumn\CMDLColumn.cs" />
     <Compile Include="LinkCadTextToModelText\CADTextModel.cs" />
     <Compile Include="LinkCadTextToModelText\CadTextToCreate.cs" />
     <Compile Include="LinkCadTextToModelText\CreateModelText.cs" />
@@ -96,9 +101,20 @@
     <Compile Include="LinkCadTextToModelText\ReadCADUtilsByDistance.cs" />
     <Compile Include="LinkCadTextToModelText\Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabManager\CheckBoxData.cs" />
+    <Compile Include="TabManager\CMDTabManager.cs" />
+    <Compile Include="TabManager\TabManagerWPF.xaml.cs">
+      <DependentUpon>TabManagerWPF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="test.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Page Include="TabManager\TabManagerWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
