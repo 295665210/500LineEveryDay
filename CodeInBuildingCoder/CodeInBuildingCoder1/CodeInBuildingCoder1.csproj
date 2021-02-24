@@ -86,6 +86,7 @@
     <Compile Include="CmdCreateGableWall.cs" />
     <Compile Include="CmdCreateLineStyle.cs" />
     <Compile Include="CmdCreateSharedParams.cs" />
+    <Compile Include="CmdCreateSlopedSlab.cs" />
     <Compile Include="CmdCropToRoom.cs" />
     <Compile Include="CmdCurtainWallGeom.cs" />
     <Compile Include="CmdDeleteUnusedRefPlanes.cs" />
