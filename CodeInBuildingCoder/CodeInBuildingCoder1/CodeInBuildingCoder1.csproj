@@ -73,6 +73,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="CmdAnalyticalModelGeom.cs" />
     <Compile Include="CmdBoundingBox.cs" />
     <Compile Include="CmdBrepBuilder.cs" />
@@ -90,9 +91,11 @@
     <Compile Include="CmdCropToRoom.cs" />
     <Compile Include="CmdCurtainWallGeom.cs" />
     <Compile Include="CmdDeleteUnusedRefPlanes.cs" />
+    <Compile Include="CmdDetailCurves.cs" />
     <Compile Include="CmdDocumentVersion.cs" />
     <Compile Include="CmdDuplicateElements.cs" />
     <Compile Include="CmdEditFloor.cs" />
+    <Compile Include="CmdElevationWatcher.cs" />
     <Compile Include="Creator.cs" />
     <Compile Include="LColumn\CMDLColumn.cs" />
     <Compile Include="LinkCadTextToModelText\CADTextModel.cs" />
