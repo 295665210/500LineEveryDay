@@ -74,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CmdDimensionWallsIterateFaces.cs" />
+    <Compile Include="JtElementsOfClassSelectionFilter.cs" />
+    <Compile Include="JtPairPicker.cs" />
     <Compile Include="CmdAnalyticalModelGeom.cs" />
     <Compile Include="CmdBoundingBox.cs" />
     <Compile Include="CmdBrepBuilder.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="CmdCurtainWallGeom.cs" />
     <Compile Include="CmdDeleteUnusedRefPlanes.cs" />
     <Compile Include="CmdDetailCurves.cs" />
+    <Compile Include="CmdDimensionInstanceOrigin.cs" />
     <Compile Include="CmdDocumentVersion.cs" />
     <Compile Include="CmdDuplicateElements.cs" />
     <Compile Include="CmdEditFloor.cs" />

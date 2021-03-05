@@ -13,8 +13,8 @@
                 <TextBlock Name="valuesettinglabel" Text="支管提升高度值" Margin="5" Width="90" HorizontalAlignment="Left" />
                 <TextBox Name="settingValue" Text="200" Width="90" Margin="5" HorizontalAlignment="Left"
                          HorizontalContentAlignment="Left" VerticalAlignment="Center" />
-                <Button Name="OkBtn" Content="OK" Width="60" HorizontalAlignment="Right" Margin="0,0,20,0"
-                        Click="Okbtn_Click" />
+                <!-- <Button Name="OkBtn" Content="OK" Width="60" HorizontalAlignment="Right" Margin="0,0,20,0" -->
+                <!--         Click="Okbtn_Click" /> -->
             </StackPanel>
         </Border>
     </Grid>
