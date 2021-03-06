@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CmdDimensionWallsFindRefs.cs" />
     <Compile Include="CmdDimensionWallsIterateFaces.cs" />
     <Compile Include="JtElementsOfClassSelectionFilter.cs" />
     <Compile Include="JtPairPicker.cs" />
