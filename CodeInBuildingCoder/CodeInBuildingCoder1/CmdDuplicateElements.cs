@@ -39,7 +39,7 @@ namespace CodeInBuildingCoder1
 
             using (Transaction tx = new Transaction(doc))
             {
-                tx.Start();
+                tx.Start("Duplicate Elements");
                 Group group =
                     doc.Create.NewGroup(uidoc.Selection.GetElementIds());
 

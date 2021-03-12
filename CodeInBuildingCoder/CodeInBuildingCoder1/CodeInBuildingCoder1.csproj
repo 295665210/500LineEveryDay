@@ -76,6 +76,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="CmdDimensionWallsFindRefs.cs" />
     <Compile Include="CmdDimensionWallsIterateFaces.cs" />
+    <Compile Include="CmdDisallowJoin.cs" />
+    <Compile Include="CmdExportIfc.cs" />
     <Compile Include="JtElementsOfClassSelectionFilter.cs" />
     <Compile Include="JtPairPicker.cs" />
     <Compile Include="CmdAnalyticalModelGeom.cs" />
