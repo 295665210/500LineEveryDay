@@ -81,6 +81,8 @@
     <Compile Include="CmdExportIfc.cs" />
     <Compile Include="CmdExportImage.cs" />
     <Compile Include="CmdExportSolidToSat.cs" />
+    <Compile Include="CmdExteriorWalls.cs" />
+    <Compile Include="CmdFamilyParamGuid.cs" />
     <Compile Include="JtElementsOfClassSelectionFilter.cs" />
     <Compile Include="JtPairPicker.cs" />
     <Compile Include="CmdAnalyticalModelGeom.cs" />
