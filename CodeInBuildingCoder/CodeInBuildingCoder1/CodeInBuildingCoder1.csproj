@@ -83,6 +83,9 @@
     <Compile Include="CmdExportSolidToSat.cs" />
     <Compile Include="CmdExteriorWalls.cs" />
     <Compile Include="CmdFamilyParamGuid.cs" />
+    <Compile Include="CmdFamilyParamValue.cs" />
+    <Compile Include="CmdFilledRegionCoords.cs" />
+    <Compile Include="CmdFlatten.cs" />
     <Compile Include="JtElementsOfClassSelectionFilter.cs" />
     <Compile Include="JtPairPicker.cs" />
     <Compile Include="CmdAnalyticalModelGeom.cs" />
